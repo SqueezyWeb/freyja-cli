@@ -1,0 +1,23 @@
+{
+    "name": "squeezyweb/freyja-cli",
+    "description": "Next Generation PHP Command Line Interface",
+    "type": "library",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Mattia Migliorini",
+            "email": "mattia@squeezyweb.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "bin": ["freyja"],
+    "require": {
+      "squeezyweb/exceptions": "~1.0.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "SqueezyWeb\\Freyja\\CLI\\": "Lib"
+      }
+    }
+}

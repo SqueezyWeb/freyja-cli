@@ -1,0 +1,47 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Freyja CLI
+ *
+ * Next Generation PHP Command Line Interface.
+ *
+ * @package SqueezyWeb\Freyja
+ * @copyright 2016 SqueezyWeb
+ * @author Mattia Migliorini <mattia@squeezyweb.com>
+ * @since 0.1.0
+ */
+
+try {
+  $autoloader = getcwd().'/vendor/autoload.php';
+
+  // Raise exception if we can't find the autoloader.
+  if (!file_exists($autoloader))
+    if (file_exists(getcwd().'/composer.json'))
+      throw new RuntimeException('composer.json found, but no autoloader. To install dependencies through composer and generate the autoloader run:'.PHP_EOL.PHP_EOL."\tcomposer install".PHP_EOL, 1);
+    else
+      throw new RuntimeException('No Freyja compatible project found. You need composer with Freyja installed as a dependency in order to continue.'.PHP_EOL, 1);
+
+  /**
+   * Register the autoloader.
+   *
+   * @since 0.1.0
+   */
+  require $autoloader;
+
+  /**
+   * @todo Run the command.
+   */
+
+  /**
+   * @todo Shutdown the command.
+   */
+  $status = $foo->shutdown();
+} catch (Exception $e) {
+  $status = $e->getCode();
+  fwrite(
+    STDERR,
+    $e->getMessage()
+  );
+}
+
+exit($status);
