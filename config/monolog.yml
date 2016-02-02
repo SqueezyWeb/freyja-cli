@@ -1,0 +1,32 @@
+disable_existing_loggers: true
+
+formatters:
+  debug:
+    class: Monolog\Formatter\LineFormatter
+  console_error:
+    class: Monolog\Formatter\LineFormatter
+    format: "%message%\n"
+handlers:
+  console:
+    class: Monolog\Handler\StreamHandler
+    level: INFO
+    stream: php://stdout
+  debug:
+    class: Monolog\Handler\StreamHandler
+    level: DEBUG
+    formatter: debug
+    processors: [memory_processor]
+    stream: ./logs/debug.log
+  error:
+    class: Monolog\Handler\StreamHandler
+    level: ERROR
+    formatter: console_error
+    stream: php://stdout
+processors:
+  memory_processor:
+    class: Monolog\Processor\MemoryUsageProcessor
+loggers:
+  freyja_cli:
+    handlers: [console, debug]
+  error_logger:
+    handlers: [error, debug]

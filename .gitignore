@@ -1,1 +1,4 @@
 /vendor/
+/logs/*
+!/logs/.gitkeep
+.environment

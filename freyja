@@ -11,23 +11,59 @@
  * @since 0.1.0
  */
 
+use Cascade\Cascade;
+use Monolog\ErrorHandler;
+use SqueezyWeb\Freyja\CLI\FreyjaCLI;
+
+// Disable xdebug, if present.
+if (function_exists('xdebug_disable'))
+  xdebug_disable();
+// Disable error reporting if not in development.
+if (
+  !file_exists(getcwd().'/.environment') ||
+  'development' != trim(file_get_contents(getcwd().'/.environment'))
+)
+  error_reporting(0);
+
 try {
   $autoloader = getcwd().'/vendor/autoload.php';
-
-  // Raise exception if we can't find the autoloader.
   if (!file_exists($autoloader))
     if (file_exists(getcwd().'/composer.json'))
-      throw new RuntimeException('composer.json found, but no autoloader. To install dependencies through composer and generate the autoloader run:'.PHP_EOL.PHP_EOL."\tcomposer install".PHP_EOL, 1);
+      throw new RuntimeException(
+        'You need ot set up the project dependencies using the following commands:'.PHP_EOL.
+        'wget http://getcomposer.org/composer.phar'.PHP_EOL.
+        'php composer.phar install'.PHP_EOL
+      );
     else
-      throw new RuntimeException('No Freyja compatible project found. You need composer with Freyja installed as a dependency in order to continue.'.PHP_EOL, 1);
+      throw new RuntimeException(
+        'No Freyja compatible project found. You need composer with Freyja CLI installed as a dependency in order to continue.'.PHP_EOL
+      );
+} catch (Exception $e) {
+  // Output exception message with red color, then exit with error status.
+  fwrite(
+    STDERR,
+    "\033[0;31m".$e->getMessage().PHP_EOL
+  );
+  exit(1);
+}
 
-  /**
-   * Register the autoloader.
-   *
-   * @since 0.1.0
-   */
-  require $autoloader;
+// Autoloader found, register it.
+require $autoloader;
 
+// Configure logger.
+Cascade::fileConfig(__DIR__.'/config/monolog.yml');
+
+// Handle errors and exceptions through Monolog.
+ErrorHandler::register(Cascade::getLogger('error_logger'));
+
+try {
+  if (!class_exists('SqueezyWeb\Freyja\CLI\FreyjaCLI'))
+    throw new RuntimeException(
+      'Freyja CLI not found. Install it via composer with the following commands:'.PHP_EOL.
+      'wget http://getcomposer.org/composer.phar'.PHP_EOL.
+      'php composer.phar require squeezyweb/freyja-cli'.PHP_EOL
+    );
+    
   /**
    * @todo Run the command.
    */
@@ -38,10 +74,7 @@ try {
   $status = $foo->shutdown();
 } catch (Exception $e) {
   $status = $e->getCode();
-  fwrite(
-    STDERR,
-    $e->getMessage()
-  );
+  Cascade::getLogger('freyja_cli')->error($e->getMessage());
 }
 
 exit($status);
