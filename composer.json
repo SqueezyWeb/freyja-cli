@@ -1,5 +1,5 @@
 {
-    "name": "squeezyweb/freyja-cli",
+    "name": "freyja/cli",
     "description": "Next Generation PHP Command Line Interface",
     "type": "library",
     "license": "GPLv2",
@@ -19,7 +19,7 @@
     },
     "autoload": {
       "psr-4": {
-        "SqueezyWeb\\Freyja\\CLI\\": "Lib"
+        "Freyja\\CLI\\": "Lib"
       }
     }
 }

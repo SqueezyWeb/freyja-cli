@@ -2,19 +2,19 @@
 /**
  * Input Argument class file.
  *
- * @package SqueezyWeb\Freyja\CLI\Input
+ * @package Freyja\CLI\Input
  * @copyright 2016 SqueezyWeb
  * @since 0.1.0
  */
 
-namespace SqueezyWeb\Freyja\CLI\Input;
-use SqueezyWeb\Freyja\Exceptions\InvalidArgumentException;
-use SqueezyWeb\Freyja\Exceptions\LogicException;
+namespace Freyja\CLI\Input;
+use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\Exceptions\LogicException;
 
 /**
  * Represents a command line argument.
  *
- * @package SqueezyWeb\Freyja\CLI\Input
+ * @package Freyja\CLI\Input
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
  * @version 1.0.0
