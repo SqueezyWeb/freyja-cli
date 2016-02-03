@@ -258,17 +258,4 @@ interface CommandInterface {
    * @return array
    */
   public function getUsages();
-
-  /**
-   * Retrieve helper instance by name.
-   *
-   * @since 1.0.0
-   * @access public
-   *
-   * @param string $name Helper name.
-   * @return mixed Helper value.
-   *
-   * @throws \RuntimeException if the helper is not defined.
-   */
-  public function getHelper($name);
 }
