@@ -114,7 +114,7 @@ abstract class Command {
    * @access public
    */
   public function __construct() {
-    $this->configure;
+    $this->configure();
   }
 
   /**
@@ -298,7 +298,7 @@ abstract class Command {
    * @return CommandInterface The current instance.
    */
   public function addArgument($name, $mode = null, $description = '', $default = null) {
-    $this->definition-addArgument(new Argument($name, $mode, $description, $default));
+    $this->definition->addArgument(new Argument($name, $mode, $description, $default));
     return $this;
   }
 
