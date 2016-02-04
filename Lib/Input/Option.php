@@ -231,7 +231,7 @@ class Option {
    *
    * @param mixed $default Default value.
    *
-   * @throws LogicException if incorrect default value is given.
+   * @throws Freyja\Exceptions\LogicException if incorrect default value is given.
    */
   public function setDefault($default = null) {
     if (!$this->acceptValue() && null !== $default)

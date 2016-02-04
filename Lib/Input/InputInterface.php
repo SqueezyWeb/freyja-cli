@@ -114,7 +114,7 @@ interface InputInterface {
    * @param string $name Argument name.
    * @param string $value Argument value.
    *
-   * @throws InvalidArgumentException if given argument does not exist.
+   * @throws Freyja\Exceptions\InvalidArgumentException if given argument does not exist.
    */
   public function setArgument($name, $value);
 
@@ -159,7 +159,7 @@ interface InputInterface {
    * @param string $name Option name.
    * @param string|bool $value Option value.
    *
-   * @throws InvalidArgumentException if option given does not exist.
+   * @throws Freyja\Exceptions\InvalidArgumentException if option given does not exist.
    */
   public function setOption($name, $value);
 

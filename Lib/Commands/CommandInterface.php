@@ -39,6 +39,9 @@ interface CommandInterface {
    * This should return false if the command can not run properly under the
    * current conditions.
    *
+   * @since 1.0.0
+   * @access public
+   *
    * @return bool
    */
   public function isEnabled();
