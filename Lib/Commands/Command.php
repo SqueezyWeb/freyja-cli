@@ -475,7 +475,7 @@ abstract class Command {
     $key = $short ? 'short' : 'long';
 
     if (!isset($this->synopsis[$key]))
-      $this->synopsis[$key] = trim(sprintf('%s %s', $this->name, $this->definition$getSynopsis($short)));
+      $this->synopsis[$key] = trim(sprintf('%s %s', $this->name, $this->definition->getSynopsis($short)));
 
     return $this->synopsis[$key];
   }

@@ -19,7 +19,7 @@ use Freyja\CLI\Formatters\OutputFormatterInterface;
  * @since 0.1.0
  * @version 1.0.0
  */
-class OutputInterface {
+interface OutputInterface {
   /**
    * Verbosity.
    *
