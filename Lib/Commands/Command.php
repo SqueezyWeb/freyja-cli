@@ -24,6 +24,7 @@ use Freyja\Exceptions\LogicException;
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
  * @version 1.0.0
+ * @abstract
  */
 abstract class Command {
   /**
@@ -137,6 +138,9 @@ abstract class Command {
    *
    * Override this to implement checks needed by your command.
    *
+   * @since 1.0.0
+   * @access public
+   *
    * @return bool
    */
   public function isEnabled() {
@@ -207,6 +211,7 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @param InputInterface $input Command input.
    * @param OutputInterface $output Command output.
@@ -214,7 +219,7 @@ abstract class Command {
    *
    * @throws \Exception
    */
-  public function run(InputInterface $input, OutputInterface $output) {
+  final public function run(InputInterface $input, OutputInterface $output) {
     // Bind the input against the command specific argument/options.
     try {
       $input->bind($this->definition);
@@ -256,12 +261,13 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @param array|InputDefinition $definition Aray of argument and option
    * instances or a definition instance.
    * @return CommandInterface The current instance.
    */
-  public function setDefinition($definition) {
+  final public function setDefinition($definition) {
     if ($definition instanceof InputDefinition)
       $this->definition = $definition;
     else
@@ -275,10 +281,11 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return InputDefinition Input definition of this Command.
    */
-  public function getDefinition() {
+  final public function getDefinition() {
     return $this->definition;
   }
 
@@ -368,10 +375,11 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return string Command name.
    */
-  public function getName() {
+  final public function getName() {
     return $this->name;
   }
 
@@ -394,10 +402,11 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return string Command description.
    */
-  public function getDescription() {
+  final public function getDescription() {
     return $this->description;
   }
 
@@ -420,10 +429,11 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return string Help for the command.
    */
-  public function getHelp() {
+  final public function getHelp() {
     return $this->help;
   }
 
@@ -454,10 +464,11 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return array Array of aliases for the command.
    */
-  public function getAliases() {
+  final public function getAliases() {
     return $this->aliases;
   }
 
@@ -503,10 +514,11 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return array
    */
-  public function getUsages() {
+  final public function getUsages() {
     return $this->usages;
   }
 
