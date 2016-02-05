@@ -154,4 +154,131 @@ abstract class Input implements InputInterface {
   public function getArguments() {
     return array_merge($this->definintion->getArgumentDefaults(), $this->arguments);
   }
+
+  /**
+   * Retrieve argument value for given argument name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Argument name.
+   * @return mixed Argument value.
+   *
+   * @throws Freyja\Exceptions\InvalidArgumentException if given argument does
+   * not exist.
+   */
+  public function getArgument($name) {
+    if (!$this->definition->hasArgument($name))
+      throw new InvalidArgumentException(sprintf('Argument "%s" does not exist.', $name));
+
+    return isset($this->arguments[$name]) ? $this->arguments[$name] : $this->definition->getArgument($name)->getDefault();
+  }
+
+  /**
+   * Set argument value by name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Argument name.
+   * @param string $value Argument value.
+   *
+   * @throws Freyja\Exceptions\InvalidArgumentException if given argument does
+   * not exist.
+   */
+  public function setArgument($name, $value) {
+    if (!$this->definition->hasArgument($name))
+      throw new InvalidArgumentException(sprintf('Argument "%s" does not exist.', $name));
+
+    $this->arguments[$name] = $value;
+  }
+
+  /**
+   * Whether Argument object exists by name or position.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string|int $name Argument name or position.
+   * @return bool True if Argument object exists, false otherwise.
+   */
+  public function hasArgument($name) {
+    return $this->definition->hasArgument($name);
+  }
+
+  /**
+   * Retrieve option values.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @return array Array of option values.
+   */
+  public function getOptions() {
+    return array_merge($this->definition->getOptionDefaults(), $this->options);
+  }
+
+  /**
+   * Retrieve option value for given option name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Option name.
+   * @return mixed Option value.
+   *
+   * @throws Freyja\Exceptions\InvalidArgumentException if given option does not
+   * exist.
+   */
+  public function getOption($name) {
+    if (!$this->definition->hasOption($name))
+      throw new InvalidArgumentException(sprintf('Option "%s" does not exist.', $name));
+
+    return isset($this->options[$name]) ? $this->options[$name] : $this->definition->getOption($name)->getDefault();
+  }
+
+  /**
+   * Set option value by name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Option name.
+   * @param string $value Option value.
+   *
+   * @throws Freyja\Exceptions\InvalidArgumentException if given option does not
+   * exist.
+   */
+  public function setOption($name, $value) {
+    if (!$this->definition->hasOption($name))
+      throw new InvalidArgumentException(sprintf('Option "%s" does not exist.', $name));
+
+    $this->options[$name] = $value;
+  }
+
+  /**
+   * Whether Option object exists by name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Option name.
+   * @return bool True if Option object exists, false otherwise.
+   */
+  public function hasOption($name) {
+    return $this->definition->hasOption($name);
+  }
+
+  /**
+   * Escape token through escapeshellarg if it contains unsafe chars.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $token
+   * @return string
+   */
+  public function escapeToken($token) {
+    return preg_match('/^[\w-]+$/', $token) ? $token : escapeshellarg($token);
+  }
 }
