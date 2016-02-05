@@ -9,19 +9,19 @@
 
 namespace Freyja\CLI\Input;
 
-use Freyja\CLI\Exceptions\RuntimeException;
+use Freyja\Exceptions\RuntimeException;
 
 /**
  * Represent input coming from CLI arguments.
  *
- * @example
+ * Usage:
  * $input = new ArgvInput();
  *
  * By default the `$_SERVER['argv']` array is used for the input values.
  * This can be overridden by explicitly passing the input values in the
  * constructor:
  *
- * @example
+ * Usage:
  * $input = new ArgvInput($_SERVER['argv']);
  *
  * If you pass it yourself, don't forget that the first element of the array

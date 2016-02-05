@@ -281,6 +281,7 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access public
+   * @final
    *
    * @return InputDefinition Input definition of this Command.
    */

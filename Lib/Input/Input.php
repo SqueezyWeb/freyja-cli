@@ -9,8 +9,8 @@
 
 namespace Freyja\CLI\Input;
 
-use Freyja\CLI\Exceptions\InvalidArgumentException;
-use Freyja\CLI\Exceptions\RuntimeException;
+use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\Exceptions\RuntimeException;
 
 /**
  * Base class for all concrete Input classes.
