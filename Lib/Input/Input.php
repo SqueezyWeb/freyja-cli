@@ -19,6 +19,7 @@ use Freyja\CLI\Exceptions\RuntimeException;
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
  * @version 1.0.0
+ * @abstract
  */
 abstract class Input implements InputInterface {
   /**
