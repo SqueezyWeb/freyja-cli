@@ -153,7 +153,7 @@ abstract class Input implements InputInterface {
    * @return array Array of argument values.
    */
   public function getArguments() {
-    return array_merge($this->definintion->getArgumentDefaults(), $this->arguments);
+    return array_merge($this->definition->getArgumentDefaults(), $this->arguments);
   }
 
   /**
