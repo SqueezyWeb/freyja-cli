@@ -179,6 +179,34 @@ class Definition {
   }
 
   /**
+   * Whether Argument object exists by name or position.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string|int $name Argument name or position.
+   *
+   * @return bool True if Argument object exists, false otherwise.
+   */
+  public function hasArgument($name) {
+    $arguments = is_int($name) ? array_values($this->arguments) : $this->arguments;
+
+    return isset($arguments[$name]);
+  }
+
+  /**
+   * Retrieve array of Argument objects.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @return Argument[] Array of Argument objects.
+   */
+  public function getArguments() {
+    return $this->arguments;
+  }
+
+  /**
    * Retrieve number of arguments.
    *
    * @since 1.0.0
