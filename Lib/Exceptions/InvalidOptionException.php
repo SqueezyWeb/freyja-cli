@@ -9,8 +9,6 @@
 
 namespace Freyja\CLI\Exceptions;
 
-use Freyja\Exceptions\InvalidArgumentException;
-
 /**
  * Exception when input option is invalid.
  *
@@ -19,7 +17,7 @@ use Freyja\Exceptions\InvalidArgumentException;
  * @since 0.1.0
  * @version 1.0.0
  */
-class InvalidOptionException extends InvalidArgumentException {
+class InvalidOptionException extends Freyja\Exceptions\InvalidArgumentException {
   /**
    * Return exception when option does not exist.
    *
