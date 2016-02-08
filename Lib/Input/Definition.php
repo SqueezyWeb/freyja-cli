@@ -144,7 +144,7 @@ class Definition {
       throw new LogicException(sprintf('An argument with name "%s" already exists.', $argument->getName()));
     if ($this->has_array_argument)
       throw new LogicException('Cannot add an argument after an array argument.');
-    if ($argument->isRequired() && $this->hasOptional)
+    if ($argument->isRequired() && $this->has_optional)
       throw new LogicException('Cannot add a required argument after an optional one.');
 
     if ($argument->isArray())
