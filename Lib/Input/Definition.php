@@ -9,7 +9,8 @@
 
 namespace Freyja\CLI\Input;
 
-use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Exceptions\InvalidOptionException;
 use Freyja\Exceptions\LogicException;
 
 /**
@@ -166,12 +167,12 @@ class Definition {
    * @param string|int $name Argument name or position.
    * @return Argument Argument object.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given argument does
+   * @throws Freyja\CLI\Exceptions\InvalidArgumentException if given argument does
    * not exist.
    */
   public function getArgument($name) {
     if (!$this->hasArgument($name))
-      throw new InvalidArgumentException(sprintf('The "%s" argument does not exist.', $name));
+      throw InvalidArgumentException::notFound($name);
 
     $arguments = is_int($name) ? array_values($this->arguments) : $this->arguments;
 
@@ -306,12 +307,12 @@ class Definition {
    * @param string $name Option name.
    * @return Option Option object.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given option doesn't
+   * @throws Freyja\CLI\Exceptions\InvalidOptionException if given option doesn't
    * exist.
    */
   public function getOption($name) {
     if (!$this->hasOption($name))
-      throw new InvalidArgumentException(sprintf('Option "--%s" does not exist.', $name));
+      throw InvalidOptionException::notFound($name);
 
     return $this->options[$name];
   }
@@ -392,12 +393,12 @@ class Definition {
    * @param string $shortcut The shortcut.
    * @return string Option name.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given option does
+   * @throws Freyja\CLI\Exceptions\InvalidOptionException if given option does
    * not exist.
    */
   private function shortcutToName($shortcut) {
     if (!isset($this->shortcuts[$shortcut]))
-      throw new InvalidArgumentException(sprintf('Option "-%s" does not exist.', $shortcut));
+      throw InvalidOptionException::notFound($shortcut);
 
     return $this->shortcuts[$shortcut];
   }

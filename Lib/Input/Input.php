@@ -9,7 +9,8 @@
 
 namespace Freyja\CLI\Input;
 
-use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Exceptions\InvalidOptionException;
 use Freyja\Exceptions\RuntimeException;
 
 /**
@@ -165,12 +166,12 @@ abstract class Input implements InputInterface {
    * @param string $name Argument name.
    * @return mixed Argument value.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given argument does
+   * @throws Freyja\CLI\Exceptions\InvalidArgumentException if given argument does
    * not exist.
    */
   public function getArgument($name) {
     if (!$this->definition->hasArgument($name))
-      throw new InvalidArgumentException(sprintf('Argument "%s" does not exist.', $name));
+      throw InvalidArgumentException::notFound($name);
 
     return isset($this->arguments[$name]) ? $this->arguments[$name] : $this->definition->getArgument($name)->getDefault();
   }
@@ -184,12 +185,12 @@ abstract class Input implements InputInterface {
    * @param string $name Argument name.
    * @param string $value Argument value.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given argument does
+   * @throws Freyja\CLI\Exceptions\InvalidArgumentException if given argument does
    * not exist.
    */
   public function setArgument($name, $value) {
     if (!$this->definition->hasArgument($name))
-      throw new InvalidArgumentException(sprintf('Argument "%s" does not exist.', $name));
+      throw InvalidArgumentException::notFound($name);
 
     $this->arguments[$name] = $value;
   }
@@ -228,12 +229,12 @@ abstract class Input implements InputInterface {
    * @param string $name Option name.
    * @return mixed Option value.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given option does not
+   * @throws Freyja\CLI\Exceptions\InvalidOptionException if given option does not
    * exist.
    */
   public function getOption($name) {
     if (!$this->definition->hasOption($name))
-      throw new InvalidArgumentException(sprintf('Option "%s" does not exist.', $name));
+      throw InvalidArgumentException::notFound($name);
 
     return isset($this->options[$name]) ? $this->options[$name] : $this->definition->getOption($name)->getDefault();
   }
@@ -247,12 +248,12 @@ abstract class Input implements InputInterface {
    * @param string $name Option name.
    * @param string $value Option value.
    *
-   * @throws Freyja\Exceptions\InvalidArgumentException if given option does not
+   * @throws Freyja\CLI\Exceptions\InvalidOptionException if given option does not
    * exist.
    */
   public function setOption($name, $value) {
     if (!$this->definition->hasOption($name))
-      throw new InvalidArgumentException(sprintf('Option "%s" does not exist.', $name));
+      throw InvalidOptionException::notFound($name);
 
     $this->options[$name] = $value;
   }

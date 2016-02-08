@@ -96,7 +96,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
    * @since 1.0.0
    * @access public
    *
-   * @expectedException \Freyja\CLI\Exceptions\InvalidOptionException
+   * @expectedException Freyja\CLI\Exceptions\InvalidOptionException
    * @expectedExceptionMessage Option "--foo" does not exist.
    */
   public function testSetInvalidOption() {
@@ -116,7 +116,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
    * @since 1.0.0
    * @access public
    *
-   * @expectedException \Freyja\CLI\Exceptions\InvalidOptionException
+   * @expectedException Freyja\CLI\Exceptions\InvalidOptionException
    * @expectedExceptionMessage Option "--foo" does not exist.
    */
   public function testGetInvalidOption() {
@@ -186,7 +186,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
    * @since 1.0.0
    * @access public
    *
-   * @expectedException \Freyja\CLI\Exceptions\InvalidArgumentException
+   * @expectedException Freyja\CLI\Exceptions\InvalidArgumentException
    * @expectedExceptionMessage Argument "foo" does not exist.
    */
   public function testSetInvalidArgument() {

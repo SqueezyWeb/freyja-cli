@@ -8,7 +8,7 @@
  */
 
 namespace Freyja\CLI\Input;
-use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Exceptions\InvalidArgumentException;
 use Freyja\Exceptions\LogicException;
 
 /**
@@ -95,7 +95,8 @@ class Argument {
    * @param mixed $default Optional. Default value (for self::OPTIONAL or
    * self::IS_ARRAY modes only). Default null.
    *
-   * @throws InvalidArgumentException if argument mode is not valid.
+   * @throws Freyja\CLI\Exceptions\InvalidArgumentException if argument mode is
+   * not valid.
    */
   public function __construct($name, $mode = null, $description = '', $default = null) {
     if (null === $mode)

@@ -8,7 +8,7 @@
  */
 
 namespace Freyja\CLI\Input;
-use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Exceptions\InvalidOptionException;
 use Freyja\Exceptions\LogicException;
 
 /**
@@ -116,14 +116,15 @@ class Option {
    * @param mixed $default Optional. Default velue. Must be null for
    * self::VALUE_REQUIRED or self::VALUE_NONE. Default null.
    *
-   * @throws InvalidArgumentException if option mode is invalid or incompatible.
+   * @throws Freyja\CLI\Exceptions\InvalidOptionException if option mode is
+   * invalid or incompatible.
    */
   public function __construct($name, $shortcut = null, $mode = null, $description = '', $default = null) {
     if (0 === strpos($name, '--'))
       $name = substr($name, 2);
 
     if (empty($name))
-      throw new InvalidArgumentException('An option name cannot be empty.');
+      throw new InvalidOptionException('An option name cannot be empty.');
 
     if (null !== $shortcut) {
       if (is_array($shortcut))
@@ -140,7 +141,7 @@ class Option {
     if (null === $mode)
       $mode = self::VALUE_NONE;
     elseif (!is_int($mode) || $mode > 15 || $mode < 1)
-      throw new InvalidArgumentException(
+      throw new InvalidOptionException(
         sprintf('Option mode "%s" is not valid.', $mode)
       );
 
