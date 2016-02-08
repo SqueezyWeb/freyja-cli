@@ -219,4 +219,57 @@ class InputTest extends \PHPUnit_Framework_TestCase {
     );
     $input->getArgument('foo');
   }
+
+  /**
+   * Test validation with missing arguments.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @expectedException Freyja\Exceptions\RuntimeException
+   * @expectedExceptionMessage Not enough arguments (missing: "name").
+   */
+  public function testValidateWithMissingArguments() {
+    $input = new ArrayInput(array());
+    $input->bind(
+      new Definition(array(
+        new Argument('name', Argument::REQUIRED),
+        new Argument('bar', Argument::OPTIONAL)
+      ))
+    );
+    $input->validate();
+  }
+
+  /**
+   * Test argument validation.
+   *
+   * @since 1.0.0
+   * @access public
+   */
+  public function testValidate() {
+    $input = new ArrayInput(array('name' => 'foo'));
+    $input->bind(new Definition(array(new Argument('name', Argument::REQUIRED))));
+
+    $this->assertNull($input->validate());
+  }
+
+  /**
+   * Test Interactive set/get.
+   *
+   * @since 1.0.0
+   * @access public
+   */
+  public function testSetGetInteractive() {
+
+    $input = new ArrayInput(array());
+    $this->assertTrue(
+      $input->isInteractive(),
+      '->isInteractive() returns whether the input should be interactive or not'
+    );
+    $input->setInteractive(false);
+    $this->assertFalse(
+      $input->isInteractive(),
+      '->setInteractive() changes the interactive flag'
+    );
+  }
 }
