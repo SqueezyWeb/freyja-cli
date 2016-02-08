@@ -112,7 +112,7 @@ abstract class Input implements InputInterface {
     $definition = $this->definition;
     $given_arguments = $this->arguments;
 
-    $missing_arguments = array_filter(array_keys($definition->getArguments()), function ($argument) use ($definition, $given_arguments) {
+    $missing_arguments = array_filter(array_keys((array) $definition->getArguments()), function ($argument) use ($definition, $given_arguments) {
       return !array_key_exists($argument, $given_arguments) && $definition->getArgument($argument)->isRequired();
     });
 

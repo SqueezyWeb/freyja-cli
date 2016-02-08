@@ -189,7 +189,7 @@ class Definition {
    * @return bool True if Argument object exists, false otherwise.
    */
   public function hasArgument($name) {
-    $arguments = is_int($name) ? array_values($this->arguments) : $this->arguments;
+    $arguments = is_int($name) ? array_values((array) $this->arguments) : $this->arguments;
 
     return isset($arguments[$name]);
   }
