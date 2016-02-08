@@ -234,7 +234,7 @@ abstract class Input implements InputInterface {
    */
   public function getOption($name) {
     if (!$this->definition->hasOption($name))
-      throw InvalidArgumentException::notFound($name);
+      throw InvalidOptionException::notFound($name);
 
     return isset($this->options[$name]) ? $this->options[$name] : $this->definition->getOption($name)->getDefault();
   }

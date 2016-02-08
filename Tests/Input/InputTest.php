@@ -101,7 +101,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
    */
   public function testSetInvalidOption() {
     $input = new ArrayInput(
-      array('--name', 'foo'),
+      array('--name' => 'foo'),
       new Definition(array(
         new Option('name'),
         new Option('bar', '', Option::VALUE_OPTIONAL, '', 'default')
@@ -121,7 +121,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
    */
   public function testGetInvalidOption() {
     $input = new ArrayInput(
-      array('--name', 'foo'),
+      array('--name' => 'foo'),
       new Definition(array(
         new Option('name'),
         new Option('bar', '', Option::VALUE_OPTIONAL, '', 'default')
