@@ -51,13 +51,12 @@ interface OutputInterface {
    * @access public
    *
    * @param string|array $messages The message as an array of lines or a single string.
-   * @param string $type Optional. Type of message to output. Default null.
    * @param bool $newline Optional. Whether to add a new line. Default false.
    * @param int $options Optional. Bitmask of options (one of the OUTPUT or
    * VERBOSE constants), 0 is considered the same as self::OUTPUT_NORMAL |
    * self::VERBOSITY_NORMAL.
    */
-  public function write($messages, $type = null, $newline = false, $options = 0);
+  public function write($messages, $newline = false, $options = 0);
 
   /**
    * Write message to the output and add newline at the end.
@@ -66,12 +65,11 @@ interface OutputInterface {
    * @access public
    *
    * @param string|array $messages Message as an array of lines or a single string.
-   * @param string $type Optional. Type of message to output. Default null.
    * @param int $options Optional. Bitmask of options (one of the OUTPUT or
    * VERBOSE constants), 0 is considered the same as self::OUTPUT_NORMAL |
    * self::VERBOSITY_NORMAL.
    */
-  public function writeln($messages, $type = null, $options = 0);
+  public function writeln($messages, $options = 0);
 
   /**
    * Set verbosity of the output.

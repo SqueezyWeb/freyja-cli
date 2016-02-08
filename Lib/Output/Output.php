@@ -139,14 +139,14 @@ abstract class Output implements OutputInterface {
   /**
    * {@inheritdoc}
    */
-  public function writeln($messages, $type = null, $options = self::OUTPUT_NORMAL) {
+  public function writeln($messages, $options = self::OUTPUT_NORMAL) {
     $this->write($messages, $type, true, $options);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function write($messages, $type = null, $newline = false, $options = self::OUTPUT_NORMAL) {
+  public function write($messages, $newline = false, $options = self::OUTPUT_NORMAL) {
     $messages = (array) $messages;
 
     $types = self::OUTPUT_NORMAL | self::OUTPUT_RAW | self::OUTPUT_PLAIN;
