@@ -165,7 +165,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
       array('name' => 'foo'),
       new Definition(array(
         new Argument('name'),
-        new Argument('bar', Argument::VALUE_OPTIONAL, '', 'default')
+        new Argument('bar', Argument::OPTIONAL, '', 'default')
       ))
     );
     $input->assertEquals(
@@ -194,7 +194,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
       array('name' => 'foo'),
       new Definition(array(
         new Argument('name'),
-        new Argument('bar', Argument::VALUE_OPTIONAL, '', 'default')
+        new Argument('bar', Argument::OPTIONAL, '', 'default')
       ))
     );
     $input->setArgument('foo', 'bar');
@@ -214,7 +214,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
       array('name' => 'foo'),
       new Definition(array(
         new Argument('name'),
-        new Argument('bar', Argument::VALUE_OPTIONAL, '', 'default')
+        new Argument('bar', Argument::OPTIONAL, '', 'default')
       ))
     );
     $input->getArgument('foo');
