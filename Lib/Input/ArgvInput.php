@@ -178,7 +178,7 @@ class ArgvInput extends Input {
       $arg = $this->definition->getArgument($c);
       $this->arguments[$arg->getName()] = $arg->isArray() ? array($token) : $token;
     // If last argument isArray(), append token to last argument.
-    } elseif ($this->definition->hasArgument($c - 1) && $this->definition->getArgument($c - 1)->isArray())
+    } elseif ($this->definition->hasArgument($c - 1) && $this->definition->getArgument($c - 1)->isArray()) {
       $arg = $this->definition->getArgument($c - 1);
       $this->arguments[$arg->getName()][] = $token;
     // Unexpected argument.
