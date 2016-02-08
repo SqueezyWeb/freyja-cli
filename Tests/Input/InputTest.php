@@ -168,7 +168,7 @@ class InputTest extends \PHPUnit_Framework_TestCase {
         new Argument('bar', Argument::OPTIONAL, '', 'default')
       ))
     );
-    $input->assertEquals(
+    $this->assertEquals(
       'default',
       $input->getArgument('bar'),
       '->getArgument() returns the default value for optional arguments'
