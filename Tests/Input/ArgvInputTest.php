@@ -39,7 +39,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('foo'),
       $p->getValue($input),
-      '->__construct() automatically get its input from the argv server variable'
+      '__construct() automatically get its input from the argv server variable'
     );
   }
 
@@ -55,14 +55,14 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('name' => 'foo'),
       $input->getArguments(),
-      '->parse() parses required arguments'
+      'parse() parses required arguments'
     );
 
     $input->bind(new Definition(array(new Argument('name'))));
     $this->assertEquals(
       array('name' => 'foo'),
       $input->getArguments(),
-      '->parse() is stateless'
+      'parse() is stateless'
     );
   }
 
@@ -95,91 +95,91 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
         array('cli.php', '--foo'),
         array(new Option('foo')),
         array('foo' => true),
-        '->parse() parses long options without a value'
+        'parse() parses long options without a value'
       ),
       array(
         array('cli.php', '--foo=bar'),
         array(new Option('foo', 'f', Option::VALUE_REQUIRED)),
         array('foo' => 'bar'),
-        '->parse() parses long options with a required value (with a = separator)'
+        'parse() parses long options with a required value (with a = separator)'
       ),
       array(
         array('cli.php', '--foo', 'bar'),
         array(new Option('foo', 'f', Option::VALUE_REQUIRED)),
         array('foo' => 'bar'),
-        '->parse() parses long options with a required value (with a space separator)'
+        'parse() parses long options with a required value (with a space separator)'
       ),
       array(
         array('cli.php', '-f'),
         array(new Option('foo', 'f')),
         array('foo' => true),
-        '->parse() parses short options without a value'
+        'parse() parses short options without a value'
       ),
       array(
         array('cli.php', '-fbar'),
         array(new Option('foo', 'f', Option::VALUE_REQUIRED)),
         array('foo' => 'bar'),
-        '->parse() parses short options with a required value (with no separator)'
+        'parse() parses short options with a required value (with no separator)'
       ),
       array(
         array('cli.php', '-f', 'bar'),
         array(new Option('foo', 'f', Option::VALUE_REQUIRED)),
         array('foo' => 'bar'),
-        '->parse() parses short options with a required value (with a space separator)'
+        'parse() parses short options with a required value (with a space separator)'
       ),
       array(
         array('cli.php', '-f', ''),
         array(new Option('foo', 'f', Option::VALUE_OPTIONAL)),
         array('foo' => ''),
-        '->parse() parses short options with an optional empty value'
+        'parse() parses short options with an optional empty value'
       ),
       array(
         array('cli.php', '-f', '', 'foo'),
         array(new Argument('name'), new Option('foo', 'f', Option::VALUE_OPTIONAL)),
         array('foo' => ''),
-        '->parse() parses short options with an optional empty value followed by an argument'
+        'parse() parses short options with an optional empty value followed by an argument'
       ),
       array(
         array('cli.php', '-f', '', '-b'),
         array(new Option('foo', 'f', Option::VALUE_OPTIONAL), new Option('bar', 'b')),
         array('foo' => '', 'bar' => true),
-        '->parse() parses short options with an optional empty value followed by an option'
+        'parse() parses short options with an optional empty value followed by an option'
       ),
       array(
         array('cli.php', '-f', '-b', 'foo'),
         array(new Argument('name'), new Option('foo', 'f', Option::VALUE_OPTIONAL), new Option('bar', 'b')),
         array('foo' => null, 'bar' => true),
-        '->parse() parses short options with an optional value which is not present'
+        'parse() parses short options with an optional value which is not present'
       ),
       array(
         array('cli.php', '-fb'),
         array(new Option('foo', 'f'), new Option('bar', 'b')),
         array('foo' => true, 'bar' => true),
-        '->parse() parses short options when they are aggregated as a single one'
+        'parse() parses short options when they are aggregated as a single one'
       ),
       array(
         array('cli.php', '-fb', 'bar'),
         array(new Option('foo', 'f'), new Option('bar', 'b', Option::VALUE_REQUIRED)),
         array('foo' => true, 'bar' => 'bar'),
-        '->parse() parses short options when they are aggregated as a single one and the last one has a required value'
+        'parse() parses short options when they are aggregated as a single one and the last one has a required value'
       ),
       array(
         array('cli.php', '-fb', 'bar'),
         array(new Option('foo', 'f'), new Option('bar', 'b', Option::VALUE_OPTIONAL)),
         array('foo' => true, 'bar' => 'bar'),
-        '->parse() parses short options when they are aggregated as a single one and the last one has an optional value'
+        'parse() parses short options when they are aggregated as a single one and the last one has an optional value'
       ),
       array(
         array('cli.php', '-fbbar'),
         array(new Option('foo', 'f'), new Option('bar', 'b', Option::VALUE_OPTIONAL)),
         array('foo' => true, 'bar' => 'bar'),
-        '->parse() parses short options when they are aggregated as a single one and the last one has an optional value with no separator'
+        'parse() parses short options when they are aggregated as a single one and the last one has an optional value with no separator'
       ),
       array(
         array('cli.php', '-fbbar'),
         array(new Option('foo', 'f', Option::VALUE_OPTIONAL), new Option('bar', 'b', Option::VALUE_OPTIONAL)),
         array('foo' => 'bbar', 'bar' => null),
-        '->parse() parses short options when they are aggregated as a single one and one of them takes a value'
+        'parse() parses short options when they are aggregated as a single one and one of them takes a value'
       )
     );
   }
@@ -265,7 +265,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('name' => array('foo', 'bar', 'baz', 'bat')),
       $input->getArguments(),
-      '->parse() parses array arguments'
+      'parse() parses array arguments'
     );
   }
 
@@ -281,7 +281,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('name' => array('foo', 'bar', 'baz')),
       $input->getOptions(),
-      '->parse() parses array options ("--option=value" syntax)'
+      'parse() parses array options ("--option=value" syntax)'
     );
 
     $input = new ArgvInput(array('cli.php', '--name', 'foo', '--name', 'bar', '--name', 'baz'));
@@ -289,7 +289,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('name' => array('foo', 'bar', 'baz')),
       $input->getOptions(),
-      '->parse() parses empty array options ("--option value" syntax)'
+      'parse() parses empty array options ("--option value" syntax)'
     );
 
     $input = new ArgvInput(array('cli.php', '--name=foo', '--name=bar', '--name='));
@@ -297,7 +297,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertSame(
       array('name' => array('foo', 'bar', null)),
       $input->getOptions(),
-      '->parse() parses empty array options as null ("--option=value" syntax)'
+      'parse() parses empty array options as null ("--option=value" syntax)'
     );
 
     $input = new ArgvINput(array('cli.php', '--name', 'foo', '--name', 'bar', '--name', '--anotherOption'));
@@ -308,7 +308,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertSame(
       array('name' => array('foo', 'bar', null), 'anotherOption' => true),
       $input->getOptions(),
-      '->parse() parses empty array options as null ("--option value" syntax)'
+      'parse() parses empty array options as null ("--option value" syntax)'
     );
   }
 
@@ -324,7 +324,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('number' => '-1'),
       $input->getArguments(),
-      '->parse() parses arguments with leading dashes as arguments after having encountered a double-dash sequence'
+      'parse() parses arguments with leading dashes as arguments after having encountered a double-dash sequence'
     );
 
     $input = new ArgvINput(array('cli.php', '-f', 'bar', '--', '-1'));
@@ -332,12 +332,12 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('foo' => 'bar'),
       $input->getOptions(),
-      '->parse() parses arguments with leading dashes as options before having encountered a double-dash sequence'
+      'parse() parses arguments with leading dashes as options before having encountered a double-dash sequence'
     );
     $this->assertEquals(
       array('number' => '-1'),
       $input->getArguments(),
-      '->parse() parses arguments with leading dashes as arguments after having encountered a double-dash sequence'
+      'parse() parses arguments with leading dashes as arguments after having encountered a double-dash sequence'
     );
   }
 
@@ -354,7 +354,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('empty' => ''),
       $input->getArguments(),
-      '->parse() parses empty string arguments'
+      'parse() parses empty string arguments'
     );
   }
 
@@ -366,13 +366,13 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
    */
   public function testGetFirstArgument() {
     $input = new ArgvInput(array('cli.php', '-fbbar'));
-    $this->assertNull($input->getFirstArgument(), '->getFirstArgument() returns null when there is no arguments');
+    $this->assertNull($input->getFirstArgument(), 'getFirstArgument() returns null when there is no arguments');
 
     $input = new ArgvInput(array('cli.php', '-fbbar', 'foo'));
     $this->assertEquals(
       'foo',
       $input->getFirstArgument(),
-      '->getFirstArgument() returns the first argument from the raw input'
+      'getFirstArgument() returns the first argument from the raw input'
     );
   }
 
@@ -384,16 +384,16 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
    */
   public function testHasParameterOption() {
     $input = new ArgvInput(array('cli.php', '-f', 'foo'));
-    $this->assertTrue($input->hasParameterOption('-f'), '->hasParameterOption() returns true if the given short option is in the raw input');
+    $this->assertTrue($input->hasParameterOption('-f'), 'hasParameterOption() returns true if the given short option is in the raw input');
 
     $input = new ArgvInput(array('cli.php', '--foo', 'foo'));
-    $this->assertTrue($input->hasParameterOption('--foo'), '->hasParameterOption() returns true if the given short option is in the raw input');
+    $this->assertTrue($input->hasParameterOption('--foo'), 'hasParameterOption() returns true if the given short option is in the raw input');
 
     $input = new ArgvInput(array('cli.php', 'foo'));
-    $this->assertFalse($input->hasParameterOption('--foo'), '->hasParameterOption() returns false if the given short option is not in the raw input');
+    $this->assertFalse($input->hasParameterOption('--foo'), 'hasParameterOption() returns false if the given short option is not in the raw input');
 
     $input = new ArgvInput(array('cli.php', '--foo=bar'));
-    $this->assertTrue($input->hasParameterOption('--foo'), '->hasParameterOption() returns true if the given option with provided value is in the raw input');
+    $this->assertTrue($input->hasParameterOption('--foo'), 'hasParameterOption() returns true if the given option with provided value is in the raw input');
   }
 
   /**
@@ -404,16 +404,16 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
    */
   public function testHasParameterOptionOnlyOptions() {
     $input = new ArgvInput(array('cli.php', '-f', 'foo'));
-    $this->assertTrue($input->hasParameterOption('-f', true), '->hasParameterOption() returns true if given short option is in the raw input');
+    $this->assertTrue($input->hasParameterOption('-f', true), 'hasParameterOption() returns true if given short option is in the raw input');
 
     $input = new ArgvInput(array('cli.php', '--foo', '--', 'foo'));
-    $this->assertTrue($input->hasParameterOption('--foo', true), '->hasParameterOption() returns true if the given long option is in the raw input');
+    $this->assertTrue($input->hasParameterOption('--foo', true), 'hasParameterOption() returns true if the given long option is in the raw input');
 
     $input = new ArgvInput(array('cli.php', '--foo=bar', 'foo'));
-    $this->assertTrue($input->hasParameterOption('--foo', true), '->hasParameterOption() returns true if the given long option with provided value is in the raw input');
+    $this->assertTrue($input->hasParameterOption('--foo', true), 'hasParameterOption() returns true if the given long option with provided value is in the raw input');
 
     $input = new ArgvInput(array('cli.php', '--', '--foo'));
-    $this->assertFalse($input->hasParameterOption('--foo', true), '->hasParameterOption() returns false if the given option is in the raw input but after the end of options signal');
+    $this->assertFalse($input->hasParameterOption('--foo', true), 'hasParameterOption() returns false if the given option is in the raw input but after the end of options signal');
   }
 
   /**
@@ -443,7 +443,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
    */
   public function testGetParameterOptionEqualSign($argv, $key, $only_params, $expected) {
     $input = new ArgvInput($argv);
-    $this->assertEquals($expected, $input->getParameterOption($key, false, $only_params), '->getParameterOption() returns the expected value');
+    $this->assertEquals($expected, $input->getParameterOption($key, false, $only_params), 'getParameterOption() returns the expected value');
   }
 
   /**
@@ -481,7 +481,7 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(
       array('file' => '-'),
       $input->getArguments(),
-      '->parse() parses single dash as an argument'
+      'parse() parses single dash as an argument'
     );
   }
 }
