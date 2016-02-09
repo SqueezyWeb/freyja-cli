@@ -125,11 +125,12 @@ class ArrayInput extends Input {
       if ($only_params && ($k === '--' || (is_int($k) && $v === '--')))
         return false;
 
-      if (is_int($k))
+      if (is_int($k)) {
         if (in_array($v, $values))
           return true;
-      elseif (in_array($k, $values))
+      } elseif (in_array($k, $values)) {
         return $v;
+      }
     }
 
     return $default;
