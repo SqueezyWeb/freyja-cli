@@ -106,11 +106,12 @@ class Definition {
   public function setDefinition(array $definition) {
     $arguments = array();
     $options = array();
-    foreach ($definition as $item)
+    foreach ($definition as $item) {
       if ($item instanceof Option)
         $options[] = $item;
       elseif ($item instanceof Argument)
         $arguments[] = $item;
+    }
 
     $this->setArguments($arguments);
     $this->setOptions($options);
@@ -126,6 +127,23 @@ class Definition {
    * empty.
    */
   public function setArguments(array $arguments = array()) {
+    // Reset arguments data.
+    $this->arguments = array();
+    $this->required_count = 0;
+    $this->has_optional = false;
+    $this->has_array_argument = false;
+    $this->addArguments($arguments);
+  }
+
+  /**
+   * Add array of Argument objects.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param Argument[] $arguments Array of Argument objects.
+   */
+  public function addArguments(array $arguments = array()) {
     array_walk($arguments, array($this, 'addArgument'));
   }
 
@@ -204,7 +222,7 @@ class Definition {
    * @return Argument[] Array of Argument objects.
    */
   public function getArguments() {
-    return $this->arguments;
+    return (array)$this->arguments;
   }
 
   /**
