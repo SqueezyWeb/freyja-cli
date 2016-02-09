@@ -45,7 +45,7 @@ class InvalidOptionException extends \Freyja\Exceptions\InvalidArgumentException
    * @return InvalidOptionException
    */
   public static function valueRequired($name) {
-    return new self(sprintf('Option "%s%s" requires a value', self::getDashes($name), $name));
+    return new self(sprintf('Option "%s%s" requires a value.', self::getDashes($name), $name));
   }
 
   /**
