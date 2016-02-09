@@ -30,13 +30,7 @@ class InvalidOptionException extends \Freyja\Exceptions\InvalidArgumentException
    * @return InvalidOptionException
    */
   public static function notFound($name) {
-    $message = '';
-    if (1 === strlen($name))
-      $message = 'Option "-%s" does not exist.';
-    else
-      $message = 'Option "--%s" does not exist.';
-
-    return new self(sprintf($message, $name));
+    return new self(sprintf('Option "%s%s" does not exist.', self::getDashes($name), $name));
   }
 
   /**
@@ -51,6 +45,25 @@ class InvalidOptionException extends \Freyja\Exceptions\InvalidArgumentException
    * @return InvalidOptionException
    */
   public static function valueRequired($name) {
-    return new self(sprintf('Option "--%s" requires a value', $name));
+    return new self(sprintf('Option "%s%s" requires a value', self::getDashes($name), $name));
+  }
+
+  /**
+   * Retrieve correct option dashes.
+   *
+   * Returns one dash for shortcuts and two for long option names.
+   *
+   * @since 1.0.0
+   * @access protected
+   * @static
+   *
+   * @param string $name Option name or shortcut.
+   *
+   * @return string Either one or two dashes.
+   */
+  protected static function getDashes($name) {
+    if (strlen($name) === 1)
+      return '-';
+    return '--';
   }
 }
