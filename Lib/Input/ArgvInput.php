@@ -103,7 +103,7 @@ class ArgvInput extends Input {
     $parse_options = true;
     $this->parsed = $this->tokens;
 
-    while (!is_null($token = array_shift($this->parsed))) {
+    while (null !== $token = array_shift($this->parsed)) {
       if ($parse_options && empty($token))
         $this->parseArgument($token);
       elseif ($parse_options && '--' == $token)
@@ -128,7 +128,7 @@ class ArgvInput extends Input {
   private function parseShortOption($token) {
     $name = substr($token, 1);
 
-    if (strlen($token) > 1) {
+    if (strlen($name) > 1) {
       if ($this->definition->hasShortcut($name[0]) && $this->definition->getOptionByShortcut($name[0])->acceptValue()) {
         // Option with a value (with no space).
         $this->addShortOption($name[0], substr($name, 1));
@@ -228,14 +228,14 @@ class ArgvInput extends Input {
       $value = null;
 
     if (!is_null($value) && !$option->acceptValue())
-      throw new RuntimeException(sprintf('Option "--%s" requires a value.', $name));
+      throw new RuntimeException(sprintf('Option "--%s" does not accept a value.', $name));
 
     if (is_null($value) && $option->acceptValue() && count($this->parsed)) {
       // If option accepts an optional or mandatory argument, let's see if there
       // is one provided.
       $next = array_shift($this->parsed);
 
-      if (isset($next[0]) && '-' !== $next[0])
+      if (isset($next[0]) && '-' !== $next[0] || empty($next))
         $value = $next;
       else
         array_unshift($this->parsed, $next);
@@ -348,14 +348,34 @@ class ArgvInput extends Input {
    * @return string
    */
   public function __toString() {
-    $tokens = array_map(function($token) {
-      if (preg_match('/^(-[^=]+=)(.+)/', $token, $match))
-        return $match[1].$this->escapeToken($match[2]);
-      if ($token && $token[0] !== '-')
-        return $this->escapeToken($token);
-      return $token;
-    }, $this->tokens);
+    $tokens = array_map(array($this, 'toStringCallback'), $this->tokens);
 
     return join(' ', $tokens);
+  }
+
+  /**
+   * Callback for __toString() magic method.
+   *
+   * Using `$this` inside a closure is not supported in PHP 5.3 and raises a
+   * PHP Fatal Error: Using $this when not in object context.
+   *
+   * In order to provide support for PHP 5.3, we use this method as a callback
+   * for the `array_map()` called in ArgvInput::__toString().
+   *
+   * @link(Issue #17, https://github.com/SqueezyWeb/freyja-cli/issues/17)
+   *
+   * @since 1.0.0
+   * @access private
+   *
+   * @param string $token Token to escape.
+   *
+   * @return string Escaped token.
+   */
+  private function toStringCallback($token) {
+    if (preg_match('/^(-[^=]+=)(.+)/', $token, $match))
+      return $match[1].$this->escapeToken($match[2]);
+    if ($token && $token[0] !== '-')
+      return $this->escapeToken($token);
+    return $token;
   }
 }
