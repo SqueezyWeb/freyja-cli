@@ -120,6 +120,9 @@ class Option {
    * invalid or incompatible.
    */
   public function __construct($name, $shortcut = null, $mode = null, $description = '', $default = null) {
+    if (in_array($name, array('-', '--')))
+      throw new InvalidOptionException(sprintf('Option name "%s" is not valid.', $name));
+
     if (0 === strpos($name, '--'))
       $name = substr($name, 2);
 
@@ -127,6 +130,8 @@ class Option {
       throw new InvalidOptionException('An option name cannot be empty.');
 
     if (null !== $shortcut) {
+      if ('-' == $shortcut)
+        throw new InvalidOptionException('Option shortcut "-" is not valid.');
       if (is_array($shortcut))
         $shortcut = implode('|', $shortcut);
       $shortcuts = preg_split('{(\|)-?}', ltrim($shortcut, '-'));
