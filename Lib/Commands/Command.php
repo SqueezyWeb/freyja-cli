@@ -236,7 +236,7 @@ abstract class Command {
       elseif (function_exists('setproctitle'))
         setproctitle($this->processTitle);
       elseif (OutputInterface::VERBOSITY_VERY_VERBOSE === $output->getVerbosity())
-        $output->writeln('Install the proctitle PECL to be able to change the process title.', 'comment');
+        $output->writeln('<warning>Install the proctitle PECL to be able to change the process title.</warning>');
     }
 
     if ($input->isInteractive())
