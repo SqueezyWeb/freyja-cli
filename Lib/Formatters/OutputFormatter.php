@@ -10,6 +10,8 @@
 namespace Freyja\CLI\Formatters;
 
 use Freyja\Exceptions\InvalidArgumentException;
+use Freyja\CLI\Formatters\Styles\StyleInterface;
+use Freyja\CLI\Formatters\Styles\OutputFormatter as Style;
 
 /**
  * Formatter class for console output.
@@ -60,21 +62,19 @@ class OutputFormatter implements OutputFormatterInterface {
    * @access public
    *
    * @param bool $decorated Whether this formatter should actually decorate strings.
-   * @param OutputFormatterStyleInterface[] $styles Array of "name => FormatterStyle"
+   * @param StyleInterface[] $styles Array of "name => FormatterStyle"
    * instances.
    */
   public function __construct($decorated = false, array $styles = array()) {
     $this->decorated = (bool) $decorated;
 
-    $this->setStyle('error', new OutputFormatterStyle('white', 'red'));
-    $this->setStyle('info', new OutputFormatterStyle('green'));
-    $this->setStyle('warning', new OutputFormatterStyle('yellow'));
-    $this->setStyle('question', new OutputFormatterStyle('black', 'cyan'));
+    $this->setStyle('error', new Style('white', 'red'));
+    $this->setStyle('info', new Style('green'));
+    $this->setStyle('warning', new Style('yellow'));
+    $this->setStyle('question', new Style('black', 'cyan'));
 
     foreach ($styles as $name => $style)
       $this->setStyle($name, $style);
-
-    $this->style_stack = new OutputFormatterStyleStack();
   }
 
   /**
@@ -95,7 +95,7 @@ class OutputFormatter implements OutputFormatterInterface {
   /**
    * {@inheritdoc}
    */
-  public function setStyle($name, OutputFormatterStyleInterface $style) {
+  public function setStyle($name, StyleInterface $style) {
     $this->styles[strtolower($name)] = $style;
   }
 

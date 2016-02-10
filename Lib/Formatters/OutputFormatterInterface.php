@@ -9,6 +9,8 @@
 
 namespace Freyja\CLI\Formatters;
 
+use Freyja\CLI\Formatters\Styles\StyleInterface;
+
 /**
  * Formatter interface for console output.
  *
@@ -47,7 +49,7 @@ interface OutputFormatterInterface {
    * @param string $name Style name.
    * @param OutputFormatterStyleInterface $style Style instance.
    */
-  public function setStyle($name, OutputFormatterStyleInterface $style);
+  public function setStyle($name, StyleInterface $style);
 
   /**
    * Check if output formatter has style with specified name.
