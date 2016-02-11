@@ -280,7 +280,7 @@ class OutputFormatter implements StyleInterface {
     if (!isset(static::${'available_'.$element.'_colors'}[$color]))
       $this->invalidArgument($element.' color', $color);
 
-    $this->foreground = static::${'available_'.$element.'_colors'}[$color];
+    $this->$element = static::${'available_'.$element.'_colors'}[$color];
   }
 
   /**

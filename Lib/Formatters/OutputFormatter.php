@@ -161,7 +161,7 @@ class OutputFormatter implements OutputFormatterInterface {
    *
    * @return string Styled text.
    */
-  private function applyStile($style, $text) {
+  private function applyStyle($style, $text) {
     return $this->isDecorated() && strlen($text) > 0 ? $this->styles[$style]->apply($text) : $text;
   }
 }
