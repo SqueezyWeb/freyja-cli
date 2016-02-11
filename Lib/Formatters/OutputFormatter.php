@@ -121,7 +121,8 @@ class OutputFormatter implements OutputFormatterInterface {
    * {@inheritdoc}
    */
   public function format($message) {
-    return preg_replace_callback('#<([a-z][a-z0-9_=;-]*)>(.*?)</\1>#i', array($this, 'formatCallback'), (string) $message);
+    $message = preg_replace_callback('#.?<([a-z][a-z0-9-]*)>(.*?)</\1>#i', array($this, 'formatCallback'), (string) $message);
+    return str_replace('\\<', '<', $message);
   }
 
   /**
@@ -138,16 +139,21 @@ class OutputFormatter implements OutputFormatterInterface {
    * @return string Formatted message.
    */
   protected function formatCallback(array $matches) {
+    $first_char = $matches[0][0];
     $style = strtolower($matches[1]);
     $message = $matches[2];
 
-    if (!$this->hasStyle($style))
+    if ('\\' == $first_char || !$this->hasStyle($style))
       return $matches[0];
+    if ('<' == $first_char)
+      $first_char = '';
 
-    if (preg_match('#<([a-z][a-z0-9_=;-]*)>(.*?)</\1>#i', $message))
+    if (preg_match('#<([a-z][a-z0-9-]*)>(.*?)</\1>#i', $message))
       $message = $this->format($message);
 
-    return str_replace('\\<', '<', $this->applyStyle($style, $message));
+    if (!$this->isDecorated())
+      return $matches[2];
+    return strlen($message) > 0 ? $first_char.$this->styles[$style]->apply($message) : $first_char.$message;
   }
 
   /**
