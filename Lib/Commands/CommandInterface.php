@@ -207,6 +207,19 @@ interface CommandInterface {
   public function getHelp();
 
   /**
+   * Retrieve processed help for the command.
+   *
+   * Replaces the %command.name% and %command.full_name% patterns with the real
+   * values dynamically.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @return string
+   */
+  public function getProcessedHelp();
+
+  /**
    * Set aliases for the command.
    *
    * @since 1.0.0
