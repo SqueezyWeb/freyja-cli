@@ -32,6 +32,10 @@ class ListCommand extends Command {
     $this->setName('list')
       ->setDefinition($this->createDefinition())
       ->setDescription('List commands')
+      // TODO: add the following when adding support for more formats:
+      // You can also output the information in other formats by using the <comment>--format</comment> option:
+      //
+      //   <info>php %command.full_name% --format=xml</info>
       ->setHelp(<<<'EOF'
 The <info>%command.name%</info> command lists all commands:
 
@@ -40,10 +44,6 @@ The <info>%command.name%</info> command lists all commands:
 You can also display the commands for a specific namespace:
 
   <info>php %command.full_name% test</info>
-
-You can also output the information in other formats by using the <comment>--format</comment> option:
-
-  <info>php %command.full_name% --format=xml</info>
 
 It's also possible to get a raw list of commands (useful for embedding command runner):
 
@@ -79,7 +79,7 @@ EOF
     return new Definition(array(
       new Argument('namespace', Argument::OPTIONAL, 'The namespace name'),
       new Option('raw', null, Option::VALUE_NONE, 'To output raw command list'),
-      new Option('format', null, Option::VALUE_REQUIRED, 'The output format (txt, xml, json, or md)', 'txt')
+      new Option('format', null, Option::VALUE_REQUIRED, 'The output format (currently only txt is supported)', 'txt')
     ));
   }
 }
