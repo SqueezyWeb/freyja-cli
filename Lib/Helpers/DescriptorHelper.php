@@ -10,7 +10,7 @@
 namespace Freyja\CLI\Helpers;
 
 use Freyja\CLI\Descriptors\DescriptorInterface;
-use Freyja\CLI\Descriptors\Text as TextDescriptor;
+use Freyja\CLI\Descriptors\TextDescriptor;
 use Freyja\CLI\Output\OutputInterface;
 use Freyja\Exceptions\InvalidArgumentException;
 

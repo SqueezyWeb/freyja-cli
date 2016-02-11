@@ -438,6 +438,32 @@ abstract class Command {
   }
 
   /**
+   * Retrieve processed help for the command.
+   *
+   * Replaces the %command.name% and %command.full_name% patterns with the real
+   * values dynamically.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @return string
+   */
+  public function getProcessedHelp() {
+    $name = $this->name;
+
+    $placeholders = array(
+      '%command.name%',
+      '%command.full_name%'
+    );
+    $replacements = array(
+      $name,
+      $_SERVER['PHP_SELF'].' '.$name
+    );
+
+    return str_replace($placeholders, $replacements, $this->getHelp() ?: $this->getDescription());
+  }
+
+  /**
    * Set aliases for the command.
    *
    * @since 1.0.0
