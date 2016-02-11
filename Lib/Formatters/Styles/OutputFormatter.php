@@ -166,7 +166,7 @@ class OutputFormatter implements StyleInterface {
    *
    * @param string $option Option name.
    *
-   * @throws Freyja\Exceptions\invalidArgument if option name is invalid.
+   * @throws Freyja\Exceptions\InvalidArgumentException if option name is invalid.
    */
   public function setOption($option) {
     try {
@@ -246,7 +246,7 @@ class OutputFormatter implements StyleInterface {
       }
     }
 
-    if (0 === count($set))
+    if (empty($set))
       return $text;
 
     return sprintf(
@@ -265,6 +265,8 @@ class OutputFormatter implements StyleInterface {
    *
    * @param string $element Element to set color to. Accepts foreground, background.
    * @param string|null $color Color name.
+   *
+   * @throws Freyja\Exceptions\InvalidArgumentException if element is invalid.
    */
   private function setColor($element, $color) {
     if (!in_array($color, array('foreground', 'background')))
@@ -289,6 +291,8 @@ class OutputFormatter implements StyleInterface {
    *
    * @param string $element Element that is invalid.
    * @param string $value Invalid value name.
+   *
+   * @throws Freyja\Exceptions\InvalidArgumentException always.
    */
   private function invalidArgument($element, $value) {
     throw new InvalidArgumentException(sprintf(
