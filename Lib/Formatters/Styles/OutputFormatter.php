@@ -48,7 +48,7 @@ class OutputFormatter implements StyleInterface {
    * @static
    * @var array
    */
-  private $available_background_colors = array(
+  private static $available_background_colors = array(
     'black' => array('set' => 40, 'unset' => 49),
     'red' => array('set' => 41, 'unset' => 49),
     'green' => array('set' => 42, 'unset' => 49),
@@ -269,7 +269,7 @@ class OutputFormatter implements StyleInterface {
    * @throws Freyja\Exceptions\InvalidArgumentException if element is invalid.
    */
   private function setColor($element, $color) {
-    if (!in_array($color, array('foreground', 'background')))
+    if (!in_array($element, array('foreground', 'background')))
       throw new InvalidArgumentException('Invalid element for setColor(). Accepted values: "foreground", "background"');
 
     if (is_null($color)) {
