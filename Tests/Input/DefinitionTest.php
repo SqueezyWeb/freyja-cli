@@ -22,13 +22,13 @@ use Freyja\CLI\Input\Option;
  * @version 1.0.0
  */
 class DefinitionTest extends \PHPUnit_Framework_TestCase {
-  protected static $fixtures;
+  // protected static $fixtures;
 
   protected $foo, $bar, $foo1, $foo2;
 
-  public static function setUpBeforeClass() {
-    self::$fixtures = __DIR__.'/../Fixtures';
-  }
+  // public static function setUpBeforeClass() {
+  //   self::$fixtures = __DIR__.'/../Fixtures';
+  // }
 
   /**
    * Test constructor with arguments.
