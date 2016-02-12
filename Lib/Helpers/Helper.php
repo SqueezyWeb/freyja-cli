@@ -19,7 +19,7 @@ use Freyja\CLI\Formatters\OutputFormatterInterface;
  * @since 0.1.0
  * @version 1.0.0
  */
-class Helper implements HelperInterface {
+abstract class Helper implements HelperInterface {
   /**
    * Associated Helper Set.
    *
@@ -148,4 +148,9 @@ class Helper implements HelperInterface {
 
     return self::strlen($string);
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  abstract function getName();
 }
