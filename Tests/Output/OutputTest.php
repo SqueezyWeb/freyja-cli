@@ -10,7 +10,7 @@
 namespace Freyja\CLI\Tests\Output;
 
 use Freyja\CLI\Output\Output;
-use Freyja\CLI\Formatters\Styles\OutputFormatter as Style;
+use Freyja\CLI\Formatters\Styles\Style;
 
 /**
  * Test Output class.

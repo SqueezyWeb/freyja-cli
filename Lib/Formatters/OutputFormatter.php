@@ -11,7 +11,7 @@ namespace Freyja\CLI\Formatters;
 
 use Freyja\Exceptions\InvalidArgumentException;
 use Freyja\CLI\Formatters\Styles\StyleInterface;
-use Freyja\CLI\Formatters\Styles\OutputFormatter as Style;
+use Freyja\CLI\Formatters\Styles\Style;
 
 /**
  * Formatter class for console output.
@@ -122,6 +122,7 @@ class OutputFormatter implements OutputFormatterInterface {
    */
   public function format($message) {
     $message = preg_replace_callback('#.?<([a-z][a-z0-9-]*)>(.*?)</\1>#i', array($this, 'formatCallback'), (string) $message);
+    $this->stack->reset();
     return str_replace('\\<', '<', $message);
   }
 
@@ -148,26 +149,21 @@ class OutputFormatter implements OutputFormatterInterface {
     if ('<' == $first_char)
       $first_char = '';
 
+    // Push style to stack.
+    $this->stack->push($this->styles[$style]);
+
     if (preg_match('#<([a-z][a-z0-9-]*)>(.*?)</\1>#i', $message))
       $message = $this->format($message);
 
+    // Styles has already been adjusted for nested styles and current style instance
+    // has been updated before when pushing to stack, so we can pop it from
+    // the stack now.
+    $this->stack->pop();
+
     if (!$this->isDecorated())
       return $matches[2];
-    return strlen($message) > 0 ? $first_char.$this->styles[$style]->apply($message) : $first_char.$message;
-  }
 
-  /**
-   * Apply given style to message.
-   *
-   * @since 1.0.0
-   * @access private
-   *
-   * @param string $style Style name.
-   * @param string $text Input text.
-   *
-   * @return string Styled text.
-   */
-  private function applyStyle($style, $text) {
-    return $this->isDecorated() && strlen($text) > 0 ? $this->styles[$style]->apply($text) : $text;
+    // Apply styles to
+    return strlen($message) > 0 ? $first_char.$this->styles[$style]->apply($message) : $first_char.$message;
   }
 }

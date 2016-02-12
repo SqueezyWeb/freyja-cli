@@ -19,7 +19,7 @@ use Freyja\Exceptions\InvalidArgumentException;
  * @since 0.1.0
  * @version 1.0.0
  */
-class OutputFormatter implements StyleInterface {
+class Style implements StyleInterface {
   /**
    * Available foreground colors.
    *
@@ -174,7 +174,7 @@ class OutputFormatter implements StyleInterface {
         $this->invalidArgument('option', $option);
 
       if (!in_array(static::$available_options[$option], $this->options))
-        $this->options[] = static::$available_options[$option];
+        $this->options[$option] = static::$available_options[$option];
     } catch (InvalidArgumentException $e) {
       throw $e;
     }
@@ -195,8 +195,8 @@ class OutputFormatter implements StyleInterface {
       if (!isset(static::$available_options[$option]))
         $this->invalidArgument('option', $option);
 
-      if (false !== $pos = array_search(static::$available_options[$option], $this->options))
-        unset($this->options[$pos]);
+      if (isset($this->options[$option]))
+        unset($this->options[$option]);
     } catch (InvalidArgumentException $e) {
       throw $e;
     }
@@ -215,6 +215,73 @@ class OutputFormatter implements StyleInterface {
 
     foreach ($options as $option)
       $this->setOption($option);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUnset($foreground, $background, array $options = array()) {
+    $this->foreground['unset'] = $foreground;
+    $this->background['unset'] = $background;
+    foreach ($options as $name => $option) {
+      $this->options[$name]['unset'] = $option['unset'];
+    }
+  }
+
+  /**
+   * Reset unset colors and options.
+   *
+   * @since 1.0.1
+   * @access public
+   */
+  public function resetUnset() {
+    $this->foreground['unset'] = $this->available_foreground_colors['default']['unset'];
+    $this->background['unset'] = $this->available_background_colors['default']['unset'];
+    foreach ($this->options[] as $name => &$option)
+      if (isset($option['set']))
+        $option['unset'] = $this->available_options[$name]['unset'];
+  }
+
+  /**
+   * Retrieve foreground color.
+   *
+   * Important: this only retrieves the foreground color of this style, i.e. the
+   * 'set' key in Style::$foreground.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return int Foreground 'set' color code.
+   */
+  public function getForeground() {
+    return isset($this->foreground['set']) ? $this->foreground['set'] : $this->available_foreground_colors['default']['set'];
+  }
+
+  /**
+   * Retrieve background color.
+   *
+   * Important: this only retrieves the background color for this style, i.e. the
+   * 'set' key in Style::$background.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return int Background 'set' color code.
+   */
+  public function getBackground() {
+    return isset($this->background['set']) ? $this->background['set'] : $this->available_background_colors['default']['set'];
+  }
+
+  /**
+   * Retrieve options.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return array Active options.
+   */
+  public function getOptions() {
+    return isset($this->options['set']) ? $this->options['set'] : array();
   }
 
   /**
@@ -241,8 +308,10 @@ class OutputFormatter implements StyleInterface {
     }
     if (!is_null($this->options)) {
       foreach ($this->options as $option) {
-        $set[] = $option['set'];
-        $unset[] = $option['unset'];
+        if (isset($option['set']))
+          $set[] = $option['set'];
+        if (isset($option['unset']))
+          $unset[] = $option['unset'];
       }
     }
 
