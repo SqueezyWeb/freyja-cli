@@ -17,7 +17,7 @@ use Freyja\Exceptions\InvalidArgumentException;
  * @package Freyja\CLI\Formatters\Styles
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Style implements StyleInterface {
   /**
@@ -221,10 +221,17 @@ class Style implements StyleInterface {
    * {@inheritdoc}
    */
   public function setUnset($foreground, $background, array $options = array()) {
-    $this->foreground['unset'] = $foreground;
-    $this->background['unset'] = $background;
+    if (!is_null($foreground)) {
+      $this->foreground['unset'] = $foreground;
+    }
+
+    if (!is_null($background)) {
+      $this->background['unset'] = $background;
+    }
+
     foreach ($options as $name => $option) {
-      $this->options[$name]['unset'] = $option['unset'];
+      if (isset($this->options[$name]))
+        $this->options[$name]['unset'] = $option['unset'];
     }
   }
 
@@ -235,11 +242,21 @@ class Style implements StyleInterface {
    * @access public
    */
   public function resetUnset() {
-    $this->foreground['unset'] = $this->available_foreground_colors['default']['unset'];
-    $this->background['unset'] = $this->available_background_colors['default']['unset'];
-    foreach ($this->options[] as $name => &$option)
+    if (!is_null($this->foreground)) {
+      if (isset($this->foreground['set']))
+        $this->foreground['unset'] = static::$available_foreground_colors['default']['unset'];
+      else
+        $this->foreground = null;
+    }
+    if (!is_null($this->background)) {
+      if (isset($this->background['set']))
+        $this->background['unset'] = static::$available_background_colors['default']['unset'];
+      else
+        $this->background = null;
+    }
+    foreach ($this->options as $name => &$option)
       if (isset($option['set']))
-        $option['unset'] = $this->available_options[$name]['unset'];
+        $option['unset'] = static::$available_options[$name]['unset'];
   }
 
   /**
@@ -254,7 +271,7 @@ class Style implements StyleInterface {
    * @return int Foreground 'set' color code.
    */
   public function getForeground() {
-    return isset($this->foreground['set']) ? $this->foreground['set'] : $this->available_foreground_colors['default']['set'];
+    return isset($this->foreground['set']) ? $this->foreground['set'] : null;
   }
 
   /**
@@ -269,7 +286,7 @@ class Style implements StyleInterface {
    * @return int Background 'set' color code.
    */
   public function getBackground() {
-    return isset($this->background['set']) ? $this->background['set'] : $this->available_background_colors['default']['set'];
+    return isset($this->background['set']) ? $this->background['set'] : null;
   }
 
   /**
@@ -299,11 +316,13 @@ class Style implements StyleInterface {
     $unset = array();
 
     if (!is_null($this->foreground)) {
-      $set[] = $this->foreground['set'];
+      if (isset($this->foreground['set']))
+        $set[] = $this->foreground['set'];
       $unset[] = $this->foreground['unset'];
     }
     if (!is_null($this->background)) {
-      $set[] = $this->background['set'];
+      if (isset($this->background['set']))
+        $set[] = $this->background['set'];
       $unset[] = $this->background['unset'];
     }
     if (!is_null($this->options)) {

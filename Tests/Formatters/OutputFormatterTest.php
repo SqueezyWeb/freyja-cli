@@ -98,7 +98,7 @@ class OutputFormatterTest extends \PHPUnit_Framework_TestCase {
     $formatter = new OutputFormatter(true);
 
     $this->assertEquals(
-      "\033[37;41msome \033[39;49m\033[32msome info\033[39m\033[37;41m error\033[39;49m",
+      "\033[37;41msome \033[32msome info\033[37;41m error\033[39;49m",
       $formatter->format('<error>some <info>some info</info> error</error>')
     );
   }
@@ -163,8 +163,8 @@ class OutputFormatterTest extends \PHPUnit_Framework_TestCase {
     $formatter = new OutputFormatter(true);
 
     $this->assertEquals(
-      "\033[37;41merror\033[39;49m\033[32minfo\033[39m\033[33mcomment\033[39m\033[37;41merror\033[39;49m",
-      $formatter->format('<error>error<info>info<comment>comment</info>error</error>')
+      "\033[37;41merror\033[32minfo\033[33mcomment\033[32m\033[37;41merror\033[39;49m",
+      $formatter->format('<error>error<info>info<comment>comment</comment></info>error</error>')
     );
   }
 
@@ -186,7 +186,10 @@ class OutputFormatterTest extends \PHPUnit_Framework_TestCase {
     $style = new Style('blue', 'white');
     $formatter->setStyle('b', $style);
 
-    $this->assertEquals("\033[34;47msome \033[39;49m\033[34;47mcustom\033[39;49m\033[34;47m msg\033[39;49m", $formatter->format('<test>some <b>custom</b> msg</test>'));
+    $this->assertEquals(
+      "\033[34;47msome \033[34;47mcustom\033[34;47m msg\033[39;49m",
+      $formatter->format('<test>some <b>custom</b> msg</test>')
+    );
   }
 
   /**
@@ -214,7 +217,7 @@ class OutputFormatterTest extends \PHPUnit_Framework_TestCase {
     $formatter = new OutputFormatter(true);
 
     $this->assertEquals(
-      "\033[32msome \033[39m\033[32m<tag>\033[39m\033[32m \033[39m\033[32m<setting=value>\033[39m\033[32m styled \033[39m\033[32m<p>\033[39m\033[32msingle-char tag\033[39m\033[32m</p>\033[39m",
+      "\033[32msome <tag> <setting=value> styled <p>single-char tag</p>\033[39m",
       $formatter->format('<info>some <tag> <setting=value> styled <p>single-char tag</p></info>')
     );
   }

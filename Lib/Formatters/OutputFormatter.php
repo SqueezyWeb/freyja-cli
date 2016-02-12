@@ -12,6 +12,7 @@ namespace Freyja\CLI\Formatters;
 use Freyja\Exceptions\InvalidArgumentException;
 use Freyja\CLI\Formatters\Styles\StyleInterface;
 use Freyja\CLI\Formatters\Styles\Style;
+use Freyja\CLI\Formatters\Styles\StyleStack;
 
 /**
  * Formatter class for console output.
@@ -19,7 +20,7 @@ use Freyja\CLI\Formatters\Styles\Style;
  * @package Freyja\CLI\Formatters
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
- * @version 1.0.0
+ * @version 1.0.1
  */
 class OutputFormatter implements OutputFormatterInterface {
   /**
@@ -39,6 +40,15 @@ class OutputFormatter implements OutputFormatterInterface {
    * @var array
    */
   private $styles = array();
+
+  /**
+   * Style Stack.
+   *
+   * @since 1.0.1
+   * @access private
+   * @var Freyja\CLI\Formatters\Styles\StyleStack
+   */
+  private $stack;
 
   /**
    * Escape "<" special char in given text.
@@ -76,6 +86,8 @@ class OutputFormatter implements OutputFormatterInterface {
 
     foreach ($styles as $name => $style)
       $this->setStyle($name, $style);
+
+    $this->stack = new StyleStack;
   }
 
   /**
@@ -118,11 +130,22 @@ class OutputFormatter implements OutputFormatterInterface {
   }
 
   /**
+   * Retrieve style stack.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return Freyja\CLI\Formatters\Styles\StyleStack
+   */
+  public function getStyleStack() {
+    return $this->stack;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function format($message) {
-    $message = preg_replace_callback('#.?<([a-z][a-z0-9-]*)>(.*?)</\1>#i', array($this, 'formatCallback'), (string) $message);
-    $this->stack->reset();
+    $message = preg_replace_callback('#.?<([a-z][a-z0-9-]*)>(.*?)</\1>#is', array($this, 'formatCallback'), (string) $message);
     return str_replace('\\<', '<', $message);
   }
 
@@ -152,18 +175,17 @@ class OutputFormatter implements OutputFormatterInterface {
     // Push style to stack.
     $this->stack->push($this->styles[$style]);
 
-    if (preg_match('#<([a-z][a-z0-9-]*)>(.*?)</\1>#i', $message))
+    if (preg_match('#<([a-z][a-z0-9-]*)>(.*?)</\1>#is', $message))
       $message = $this->format($message);
 
-    // Styles has already been adjusted for nested styles and current style instance
-    // has been updated before when pushing to stack, so we can pop it from
-    // the stack now.
-    $this->stack->pop();
-
-    if (!$this->isDecorated())
+    if (!$this->isDecorated()) {
+      $this->stack->pop();
       return $matches[2];
+    }
 
     // Apply styles to
-    return strlen($message) > 0 ? $first_char.$this->styles[$style]->apply($message) : $first_char.$message;
+    $message = strlen($message) > 0 ? $first_char.$this->stack->getCurrent()->apply($message) : $first_char.$message;
+    $this->stack->pop();
+    return $message;
   }
 }

@@ -15,7 +15,7 @@ namespace Freyja\CLI\Formatters\Styles;
  * @package Freyja\CLI\Formatters\Styles
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
- * @version 1.0.0
+ * @version 1.0.1
  */
 interface StyleInterface {
   /**
