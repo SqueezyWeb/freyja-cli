@@ -102,13 +102,14 @@ class TextDescriptor extends Descriptor {
     if ($definition->getArguments() && $definition->getOptions())
       $this->writeNewLine();
 
+    $later_options = array();
     if ($definition->getOptions()) {
-      $later_options = array();
-
       $this->writeText('<comment>Options:</comment>', $options);
       foreach ($definition->getOptions() as $option) {
-        $later_options[] = $option;
-        continue;
+        if (strlen($option->getShortcut()) > 1) {
+          $later_options[] = $option;
+          continue;
+        }
       }
       $this->writeNewLine();
       $this->describeInputOption($option, array_merge($options, array('total_width' => $total_width)));
@@ -125,10 +126,9 @@ class TextDescriptor extends Descriptor {
   protected function describeCommand(Command $command, array $options = array()) {
     $command->getSynopsis(true);
     $command->getSynopsis(false);
-    $command->mergeApplicationDefinition(false);
 
     $this->writeText('<comment>Usage:</comment>', $options);
-    foreach (array_merge(array($command->getSynopsis(true), $command->getAliases(), $command->getUsages())) as $usage) {
+    foreach (array_merge(array($command->getSynopsis(true)), $command->getAliases(), $command->getUsages()) as $usage) {
       $this->writeNewLine();
       $this->writeText('  '.$usage, $options);
     }

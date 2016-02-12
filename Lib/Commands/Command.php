@@ -11,7 +11,7 @@ namespace Freyja\CLI\Commands;
 use Freyja\CLI\Input\Argument;
 use Freyja\CLI\Input\Option;
 use Freyja\CLI\Input\InputInterface;
-use Freyja\CLI\Input\Definition as InputDefinition;
+use Freyja\CLI\Input\Definition;
 use Freyja\CLI\Output\OutputInterface;
 use Freyja\Exceptions\ExceptionInterface;
 use Freyja\Exceptions\InvalidArgumentException;
@@ -59,7 +59,7 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access private
-   * @var InputDefinition
+   * @var Definition
    */
   private $definition;
 
@@ -115,6 +115,7 @@ abstract class Command {
    * @access public
    */
   public function __construct() {
+    $this->definition = new Definition;
     $this->configure();
   }
 
@@ -172,7 +173,7 @@ abstract class Command {
   /**
    * Interact with the user.
    *
-   * This method is executed before the InputDefinition is validated.
+   * This method is executed before the Definition is validated.
    * This means that this is the only place where the command can interactively
    * ask for values of missing required arguments.
    *
@@ -263,12 +264,12 @@ abstract class Command {
    * @access public
    * @final
    *
-   * @param array|InputDefinition $definition Aray of argument and option
+   * @param array|Definition $definition Aray of argument and option
    * instances or a definition instance.
    * @return CommandInterface The current instance.
    */
   final public function setDefinition($definition) {
-    if ($definition instanceof InputDefinition)
+    if ($definition instanceof Definition)
       $this->definition = $definition;
     else
       $this->definition->setDefinition($definition);
@@ -277,13 +278,13 @@ abstract class Command {
   }
 
   /**
-   * Retrieve InputDefinition attached to this Command.
+   * Retrieve Definition attached to this Command.
    *
    * @since 1.0.0
    * @access public
    * @final
    *
-   * @return InputDefinition Input definition of this Command.
+   * @return Definition Input definition of this Command.
    */
   final public function getDefinition() {
     return $this->definition;

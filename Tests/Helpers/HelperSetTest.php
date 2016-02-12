@@ -10,7 +10,7 @@
 namespace Freyja\CLI\Tests\Helpers;
 
 use Freyja\CLI\Helpers\HelperSet;
-use Freyja\CLI\Tests\Commands\MockCommand as Command;
+use Freyja\CLI\Tests\Fixtures\TestCommand as Command;
 
 /**
  * Test HelperSet class.
