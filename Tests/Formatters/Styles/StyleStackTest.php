@@ -105,21 +105,25 @@ class StyleStackTest extends \PHPUnit_Framework_TestCase {
     $p = $r->getProperty('styles');
     $p->setAccessible(true);
 
-    $this->assertTrue(empty($p->getValue($stack)), 'StyleStack::$styles is initially empty');
+    $styles = $p->getValue($stack);
+    $this->assertTrue(empty($styles), 'StyleStack::$styles is initially empty');
 
     $pop = $stack->pop();
     $this->assertEquals(new Style, $pop, 'pop() returns StyleStack::$empty_style if StyleStack::$styles is empty');
-    $this->assertTrue(empty($p->getValue($stack)), 'StyleStack::$styles is still empty after pop()');
+    $styles = $p->getValue($stack);
+    $this->assertTrue(empty($styles), 'StyleStack::$styles is still empty after pop()');
 
     $style = new Style('red');
     $stack->push($style);
-    $this->assertTrue(1 === count($p->getValue($stack)), 'StyleStack::$styles has exactly one element after push()');
+    $styles = $p->getValue($stack);
+    $this->assertTrue(1 === count($styles), 'StyleStack::$styles has exactly one element after push()');
     $pop = $stack->pop();
     $this->assertSame($style, $pop, 'pop() returns the last element in the stack');
 
     $green = new Style('green');
     $stack->push($style)->push($green);
-    $this->assertTrue(2 === count($p->getValue($stack)), 'StyleStack::$styles has exactly two elements after push()');
+    $styles = $p->getValue($stack);
+    $this->assertTrue(2 === count($styles), 'StyleStack::$styles has exactly two elements after push()');
     $pop = $stack->pop();
     $this->assertSame($green, $pop, 'pop() returns the last element in the stack and its properties have been resetted');
     $pop = $stack->pop();
