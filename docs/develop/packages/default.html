@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; 
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">Freyja CLI by SqueezyWeb</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Freyja.html">Freyja</a></li>
+                                                                        <li><a href="../namespaces/SqueezyWeb.html">SqueezyWeb</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Packages
+                </li>
+                <a href="../packages/default.html" title="\">
+                    <i class="icon-th"></i> \
+                </a>
+                <ul class="nav nav-list nav-packages">
+                        
+        <li>
+        <a href="../packages/Frayja.html" title="Frayja">
+            <i class="icon-th"></i> Frayja
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/Frayja.CLI.html" title="CLI">
+            <i class="icon-th"></i> CLI
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/Frayja.CLI.Formatters.html" title="Formatters">
+            <i class="icon-th"></i> Formatters
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/Frayja.CLI.Formatters.Styles.html" title="Styles">
+            <i class="icon-th"></i> Styles
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.html" title="Freyja">
+            <i class="icon-th"></i> Freyja
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/Freyja.CLI.html" title="CLI">
+            <i class="icon-th"></i> CLI
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/Freyja.CLI.Commands.html" title="Commands">
+            <i class="icon-th"></i> Commands
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Descriptors.html" title="Descriptors">
+            <i class="icon-th"></i> Descriptors
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Exceptions.html" title="Exceptions">
+            <i class="icon-th"></i> Exceptions
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Formatters.html" title="Formatters">
+            <i class="icon-th"></i> Formatters
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/Freyja.CLI.Formatters.Styles.html" title="Styles">
+            <i class="icon-th"></i> Styles
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Helpers.html" title="Helpers">
+            <i class="icon-th"></i> Helpers
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Input.html" title="Input">
+            <i class="icon-th"></i> Input
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Output.html" title="Output">
+            <i class="icon-th"></i> Output
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/Freyja.CLI.Testers.html" title="Testers">
+            <i class="icon-th"></i> Testers
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../packages/SqueezyWeb.html" title="SqueezyWeb">
+            <i class="icon-th"></i> SqueezyWeb
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/SqueezyWeb.Freyja.html" title="Freyja">
+            <i class="icon-th"></i> Freyja
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+        <li>
+        <a href="../packages/SqueezyWeb.Freyja.CLI.html" title="CLI">
+            <i class="icon-th"></i> CLI
+        </a>
+        <ul class="nav nav-list nav-packages">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 package-contents">
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/default.html">\</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Commands.html">Commands</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="CommandInterface" class="element ajax clickable interface">
+        <h1>CommandInterface<a href="../classes/Freyja.CLI.Commands.CommandInterface.html">¶</a></h1>
+        <p class="short_description">Freyja CLI Command Interface.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Commands.CommandInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="Command" class="element ajax clickable class">
+        <h1>Command<a href="../classes/Freyja.CLI.Commands.Command.html">¶</a></h1>
+        <p class="short_description">Freyja CLI Abstract Command.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Commands.Command.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="HelpCommand" class="element ajax clickable class">
+        <h1>HelpCommand<a href="../classes/Freyja.CLI.Commands.HelpCommand.html">¶</a></h1>
+        <p class="short_description">Display help for given command.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Commands.HelpCommand.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="ListCommand" class="element ajax clickable class">
+        <h1>ListCommand<a href="../classes/Freyja.CLI.Commands.ListCommand.html">¶</a></h1>
+        <p class="short_description">Display list of all available commands for the application.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Commands.ListCommand.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Input.html">Input</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="InputAwareInterface" class="element ajax clickable interface">
+        <h1>InputAwareInterface<a href="../classes/Freyja.CLI.Input.InputAwareInterface.html">¶</a></h1>
+        <p class="short_description">This interface SHOULD be implemented by classes that depend on CLI Input.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Input.InputAwareInterface.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="InputInterface" class="element ajax clickable interface">
+        <h1>InputInterface<a href="../classes/Freyja.CLI.Input.InputInterface.html">¶</a></h1>
+        <p class="short_description">Interface implemented by all input classes.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Input.InputInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="Argument" class="element ajax clickable class">
+        <h1>Argument<a href="../classes/Freyja.CLI.Input.Argument.html">¶</a></h1>
+        <p class="short_description">Represents a command line argument.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Input.Argument.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="ArgvInput" class="element ajax clickable class">
+        <h1>ArgvInput<a href="../classes/Freyja.CLI.Input.ArgvInput.html">¶</a></h1>
+        <p class="short_description">Represent input coming from CLI arguments.</p>
+        <div class="details collapse">Usage:
+$input = new ArgvInput();
+
+By default the `$_SERVER[&#039;argv&#039;]` array is used for the input values.
+This can be overridden by explicitly passing the input values in the
+constructor:
+
+Usage:
+$input = new ArgvInput($_SERVER[&#039;argv&#039;]);
+
+If you pass it yourself, don&#039;t forget that the first element of the array
+is the name of the running application.
+
+When passing an argument to the constructor, be sure that it respects the
+same rules as the argv one. It&#039;s almost always better to use the `StringInput`
+when you want to provide your own input.</div>
+        <a href="../classes/Freyja.CLI.Input.ArgvInput.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="ArrayInput" class="element ajax clickable class">
+        <h1>ArrayInput<a href="../classes/Freyja.CLI.Input.ArrayInput.html">¶</a></h1>
+        <p class="short_description">Represent input provided as array.</p>
+        <div class="details collapse">Usage:
+
+$input = new ArrayInput(array(&#039;name&#039; =&gt; &#039;foo&#039;, &#039;--bar&#039; =&gt; &#039;foobar&#039;));</div>
+        <a href="../classes/Freyja.CLI.Input.ArrayInput.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="Definition" class="element ajax clickable class">
+        <h1>Definition<a href="../classes/Freyja.CLI.Input.Definition.html">¶</a></h1>
+        <p class="short_description">Representation of a set of a valid command line arguments and options.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Input.Definition.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="Input" class="element ajax clickable class">
+        <h1>Input<a href="../classes/Freyja.CLI.Input.Input.html">¶</a></h1>
+        <p class="short_description">Base class for all concrete Input classes.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Input.Input.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="Option" class="element ajax clickable class">
+        <h1>Option<a href="../classes/Freyja.CLI.Input.Option.html">¶</a></h1>
+        <p class="short_description">Represent a command line option.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Input.Option.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Exceptions.html">Exceptions</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="InvalidArgumentException" class="element ajax clickable class">
+        <h1>InvalidArgumentException<a href="../classes/Freyja.CLI.Exceptions.InvalidArgumentException.html">¶</a></h1>
+        <p class="short_description">Exception when input argument is invalid.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Exceptions.InvalidArgumentException.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="InvalidOptionException" class="element ajax clickable class">
+        <h1>InvalidOptionException<a href="../classes/Freyja.CLI.Exceptions.InvalidOptionException.html">¶</a></h1>
+        <p class="short_description">Exception when input option is invalid.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Exceptions.InvalidOptionException.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Testers.html">Testers</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="CommandTester" class="element ajax clickable class">
+        <h1>CommandTester<a href="../classes/Freyja.CLI.Testers.CommandTester.html">¶</a></h1>
+        <p class="short_description">Ease testing of console commands.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Testers.CommandTester.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Helpers.html">Helpers</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="HelperInterface" class="element ajax clickable interface">
+        <h1>HelperInterface<a href="../classes/Freyja.CLI.Helpers.HelperInterface.html">¶</a></h1>
+        <p class="short_description">Interface all helpers must implement.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Helpers.HelperInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="DescriptorHelper" class="element ajax clickable class">
+        <h1>DescriptorHelper<a href="../classes/Freyja.CLI.Helpers.DescriptorHelper.html">¶</a></h1>
+        <p class="short_description">Helper class to describe objects in various formats.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Helpers.DescriptorHelper.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="FormatterHelper" class="element ajax clickable class">
+        <h1>FormatterHelper<a href="../classes/Freyja.CLI.Helpers.FormatterHelper.html">¶</a></h1>
+        <p class="short_description">Provide helpers to format messages.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Helpers.FormatterHelper.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="Helper" class="element ajax clickable class">
+        <h1>Helper<a href="../classes/Freyja.CLI.Helpers.Helper.html">¶</a></h1>
+        <p class="short_description">Base class for all helper classes.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Helpers.Helper.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="HelperSet" class="element ajax clickable class">
+        <h1>HelperSet<a href="../classes/Freyja.CLI.Helpers.HelperSet.html">¶</a></h1>
+        <p class="short_description">Represents a set of helpers to be used with a command.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Helpers.HelperSet.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Output.html">Output</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="ConsoleOutputInterface" class="element ajax clickable interface">
+        <h1>ConsoleOutputInterface<a href="../classes/Freyja.CLI.Output.ConsoleOutputInterface.html">¶</a></h1>
+        <p class="short_description">Interface implemented by ConsoleOutput class.</p>
+        <div class="details collapse">Adds information about stderr output stream.</div>
+        <a href="../classes/Freyja.CLI.Output.ConsoleOutputInterface.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="OutputInterface" class="element ajax clickable interface">
+        <h1>OutputInterface<a href="../classes/Freyja.CLI.Output.OutputInterface.html">¶</a></h1>
+        <p class="short_description">Interface implemented by all Output classes.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Output.OutputInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="BufferedOutput" class="element ajax clickable class">
+        <h1>BufferedOutput<a href="../classes/Freyja.CLI.Output.BufferedOutput.html">¶</a></h1>
+        <p class="short_description">Handle output buffer.</p>
+        <div class="details collapse">There are five levels of verbosity:
+- normal: no option passed (normal output)
+- verbose: -v (more output)
+- very verbose: -vv (highly extended output)
+- debug: -vvv (all debug output)
+- quiet: -q (no output)</div>
+        <a href="../classes/Freyja.CLI.Output.BufferedOutput.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="ConsoleOutput" class="element ajax clickable class">
+        <h1>ConsoleOutput<a href="../classes/Freyja.CLI.Output.ConsoleOutput.html">¶</a></h1>
+        <p class="short_description">Default class for all CLI output. Uses STDOUT.</p>
+        <div class="details collapse">This class is a convenient wrapper around `StreamOutput`.
+
+$output = new ConsoleOutput;
+
+This is equivalent to:
+
+$output = new StreamOutput(fopen(&#039;php://stdout&#039;, &#039;w&#039;));</div>
+        <a href="../classes/Freyja.CLI.Output.ConsoleOutput.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="NullOutput" class="element ajax clickable class">
+        <h1>NullOutput<a href="../classes/Freyja.CLI.Output.NullOutput.html">¶</a></h1>
+        <p class="short_description">Suppress all output.</p>
+        <div class="details collapse">Usage:
+
+$output = new NullOutput();</div>
+        <a href="../classes/Freyja.CLI.Output.NullOutput.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="Output" class="element ajax clickable class">
+        <h1>Output<a href="../classes/Freyja.CLI.Output.Output.html">¶</a></h1>
+        <p class="short_description">Base class for output classes.</p>
+        <div class="details collapse">There are five levels of verbosity:
+- normal: no option passed (normal output)
+- verbose: -v (more output)
+- very verbose: -vv (highly extended output)
+- debug: -vvv (all debug output)
+- quiet: -q (no output)</div>
+        <a href="../classes/Freyja.CLI.Output.Output.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="StreamOutput" class="element ajax clickable class">
+        <h1>StreamOutput<a href="../classes/Freyja.CLI.Output.StreamOutput.html">¶</a></h1>
+        <p class="short_description">Write output to given stream.</p>
+        <div class="details collapse">Usage:
+
+$output = new StreamOutput(fopen(&#039;php://stdout&#039;, &#039;w&#039;));
+
+As `StreamOutput` can use any stream, you can also use a file:
+
+$output = new StreamOutput(fopen(&#039;/path/to/output.log&#039;, &#039;a&#039;, false));</div>
+        <a href="../classes/Freyja.CLI.Output.StreamOutput.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Formatters.html">Formatters</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="OutputFormatterInterface" class="element ajax clickable interface">
+        <h1>OutputFormatterInterface<a href="../classes/Freyja.CLI.Formatters.OutputFormatterInterface.html">¶</a></h1>
+        <p class="short_description">Formatter interface for console output.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Formatters.OutputFormatterInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="OutputFormatter" class="element ajax clickable class">
+        <h1>OutputFormatter<a href="../classes/Freyja.CLI.Formatters.OutputFormatter.html">¶</a></h1>
+        <p class="short_description">Formatter class for console output.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Formatters.OutputFormatter.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Formatters.html">Formatters</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Formatters.Styles.html">Styles</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="StyleInterface" class="element ajax clickable interface">
+        <h1>StyleInterface<a href="../classes/Freyja.CLI.Formatters.Styles.StyleInterface.html">¶</a></h1>
+        <p class="short_description">Formatter style interface for defining styles.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Formatters.Styles.StyleInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="Style" class="element ajax clickable class">
+        <h1>Style<a href="../classes/Freyja.CLI.Formatters.Styles.Style.html">¶</a></h1>
+        <p class="short_description">Formatter style class for console output.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Formatters.Styles.Style.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Freyja.CLI.Descriptors.html">Descriptors</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="DescriptorInterface" class="element ajax clickable interface">
+        <h1>DescriptorInterface<a href="../classes/Freyja.CLI.Descriptors.DescriptorInterface.html">¶</a></h1>
+        <p class="short_description">Descriptor interface.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Descriptors.DescriptorInterface.html" class="more">« More »</a>
+    </div>
+
+                
+                                        <div id="Descriptor" class="element ajax clickable class">
+        <h1>Descriptor<a href="../classes/Freyja.CLI.Descriptors.Descriptor.html">¶</a></h1>
+        <p class="short_description">Base descriptor class.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Descriptors.Descriptor.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="TextDescriptor" class="element ajax clickable class">
+        <h1>TextDescriptor<a href="../classes/Freyja.CLI.Descriptors.TextDescriptor.html">¶</a></h1>
+        <p class="short_description">Text descriptor.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Descriptors.TextDescriptor.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+    
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.html">Frayja</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.html">Frayja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.CLI.html">CLI</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.html">Frayja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.CLI.Formatters.html">Formatters</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.html">Frayja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.CLI.html">CLI</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.CLI.Formatters.html">Formatters</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/Frayja.CLI.Formatters.Styles.html">Styles</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="StyleStack" class="element ajax clickable class">
+        <h1>StyleStack<a href="../classes/Freyja.CLI.Formatters.Styles.StyleStack.html">¶</a></h1>
+        <p class="short_description">Stack of styles.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Freyja.CLI.Formatters.Styles.StyleStack.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+    
+    
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/SqueezyWeb.html">SqueezyWeb</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/SqueezyWeb.html">SqueezyWeb</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/SqueezyWeb.Freyja.html">Freyja</a>
+    </li>
+
+    </ul>
+
+    
+                
+    <ul class="breadcrumb">
+        <li><a href="../index.html"><i class="icon-th"></i></a></li>
+            
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/SqueezyWeb.html">SqueezyWeb</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/SqueezyWeb.Freyja.html">Freyja</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../packages/SqueezyWeb.Freyja.CLI.html">CLI</a>
+    </li>
+
+    </ul>
+
+    
+        
+        
+                    <div class="package-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="FreyjaCLI" class="element ajax clickable class">
+        <h1>FreyjaCLI<a href="../classes/SqueezyWeb.Freyja.CLI.FreyjaCLI.html">¶</a></h1>
+        <p class="short_description">Freyja CLI main class.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/SqueezyWeb.Freyja.CLI.FreyjaCLI.html" class="more">« More »</a>
+    </div>
+
+                            </div>
+            
+    
+    
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Mon, 15 Feb 2016 17:33:52 +0000.<br/>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,2394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    Freyja CLI by SqueezyWeb &raquo; \Freyja\CLI\Commands\Command
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">Freyja CLI by SqueezyWeb</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Freyja.html">Freyja</a></li>
+                                                                        <li><a href="../namespaces/SqueezyWeb.html">SqueezyWeb</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Constructor.">
+            <span class="description">Constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_addArgument" title="addArgument :: Add argument.">
+            <span class="description">Add argument.</span><pre>addArgument</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_addOption" title="addOption :: Add option.">
+            <span class="description">Add option.</span><pre>addOption</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_addUsage" title="addUsage :: Add command usage example.">
+            <span class="description">Add command usage example.</span><pre>addUsage</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_getAliases" title="getAliases :: Retrieve aliases for the command.">
+            <span class="description">Retrieve aliases for the command.</span><pre>getAliases</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getDefinition" title="getDefinition :: Retrieve Definition attached to this Command.">
+            <span class="description">Retrieve Definition attached to this Command.</span><pre>getDefinition</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getDescription" title="getDescription :: Retrieve command description.">
+            <span class="description">Retrieve command description.</span><pre>getDescription</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getHelp" title="getHelp :: Retrieve help for the command.">
+            <span class="description">Retrieve help for the command.</span><pre>getHelp</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getHelper" title="getHelper :: Retrieve helper instance by name.">
+            <span class="description">Retrieve helper instance by name.</span><pre>getHelper</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getHelperSet" title="getHelperSet :: Retrieve helper set.">
+            <span class="description">Retrieve helper set.</span><pre>getHelperSet</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getName" title="getName :: Retrieve command name.">
+            <span class="description">Retrieve command name.</span><pre>getName</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getProcessedHelp" title="getProcessedHelp :: Retrieve processed help for the command.">
+            <span class="description">Retrieve processed help for the command.</span><pre>getProcessedHelp</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getSynopsis" title="getSynopsis :: Retrieve synopsis for the command.">
+            <span class="description">Retrieve synopsis for the command.</span><pre>getSynopsis</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getUsages" title="getUsages :: Retrieve alternative usages of the command.">
+            <span class="description">Retrieve alternative usages of the command.</span><pre>getUsages</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ignoreValidationErrors" title="ignoreValidationErrors :: Ignore validation errors.">
+            <span class="description">Ignore validation errors.</span><pre>ignoreValidationErrors</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_isEnabled" title="isEnabled :: Whether command is enabled or not in the current environment.">
+            <span class="description">Whether command is enabled or not in the current environment.</span><pre>isEnabled</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_run" title="run :: Run the command.">
+            <span class="description">Run the command.</span><pre>run</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setAliases" title="setAliases :: Set aliases for the command.">
+            <span class="description">Set aliases for the command.</span><pre>setAliases</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setDefinition" title="setDefinition :: Set array of argument and option instances.">
+            <span class="description">Set array of argument and option instances.</span><pre>setDefinition</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setDescription" title="setDescription :: Set description for the command.">
+            <span class="description">Set description for the command.</span><pre>setDescription</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setHelp" title="setHelp :: Set help for the command.">
+            <span class="description">Set help for the command.</span><pre>setHelp</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setHelperSet" title="setHelperSet :: Set helper set.">
+            <span class="description">Set helper set.</span><pre>setHelperSet</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setName" title="setName :: Set name of command.">
+            <span class="description">Set name of command.</span><pre>setName</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setProcessTitle" title="setProcessTitle :: Set process title of the command.">
+            <span class="description">Set process title of the command.</span><pre>setProcessTitle</pre>
+        </a>
+    </li>
+
+                                                                                                        </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                            <li class="method protected">
+                            <a href="#method_configure" title="configure :: Configure the current command.">
+                                <span class="description">Configure the current command.</span><pre>configure</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_execute" title="execute :: Execute the current command.">
+                                <span class="description">Execute the current command.</span><pre>execute</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
+                            <a href="#method_initialize" title="initialize :: Initialize command just after input has been validated.">
+                                <span class="description">Initialize command just after input has been validated.</span><pre>initialize</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_interact" title="interact :: Interact with the user.">
+                                <span class="description">Interact with the user.</span><pre>interact</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="method private">
+                            <a href="#method_validateName" title="validateName :: Validate command name.">
+                                <span class="description">Validate command name.</span><pre>validateName</pre>
+                            </a>
+                        </li>
+                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Command</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Freyja CLI Abstract Command.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Freyja\CLI\Commands</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Mattia Migliorini <a href="mailto:mattia@squeezyweb.com">mattia@squeezyweb.com</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        since
+                                                                            </th>
+                                    <td>
+                                                                                    0.1.0
+                                                                                
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        version
+                                                                            </th>
+                                    <td>
+                                                                                    1.0.0
+                                                                                
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        abstract
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                
+                                    </td>
+                                </tr>
+                                                                                                                                                                                                                                                                                                                                            </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Constructor.</h2>
+                            <pre>__construct() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addArgument"></a>
+                        <div class="element clickable method public  method_addArgument" data-toggle="collapse" data-target=".method_addArgument .collapse">
+                            <h2>Add argument.</h2>
+                            <pre>addArgument(string $name, integer $mode = null, string $description = &#039;&#039;, mixed $default = null) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Argument name.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mode</h4>
+                                                <code>integer</code><p><p>Optional. Argument mode: Argument::REQUIRED,
+Argument::OPTIONAL, or Argument::IS_ARRAY. If null, defaults to
+Argument::OPTIONAL. Default null.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$description</h4>
+                                                <code>string</code><p><p>Optional. Description text. Default empty.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$default</h4>
+                                                <code>mixed</code><p><p>Optional. Default value (not for Argument::REQUIRED
+mode). Default null.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addOption"></a>
+                        <div class="element clickable method public  method_addOption" data-toggle="collapse" data-target=".method_addOption .collapse">
+                            <h2>Add option.</h2>
+                            <pre>addOption(string $name, string $shortcut = null, integer $mode = null, string $description = &#039;&#039;, mixed $default = null) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Option name.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$shortcut</h4>
+                                                <code>string</code><p><p>Optional. Option shortcut. Default null.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mode</h4>
+                                                <code>integer</code><p><p>Optional. Option mode. One of the Option::VALUE_* constants.
+If null, Option::VALUE_OPTIONAL is used. Default null.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$description</h4>
+                                                <code>string</code><p><p>Optional. Description text. Default empty.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$default</h4>
+                                                <code>mixed</code><p><p>Optional. Default value. Must be null for
+Option::VALUE_REQUIRED or Option::VALUE_NONE. Default null.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addUsage"></a>
+                        <div class="element clickable method public  method_addUsage" data-toggle="collapse" data-target=".method_addUsage .collapse">
+                            <h2>Add command usage example.</h2>
+                            <pre>addUsage(string $usage) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$usage</h4>
+                                                <code>string</code><p><p>The usage, it'll be prefixed with the command name.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_configure"></a>
+                        <div class="element clickable method protected  method_configure" data-toggle="collapse" data-target=".method_configure .collapse">
+                            <h2>Configure the current command.</h2>
+                            <pre>configure() </pre>
+                            <div class="labels">
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>protected</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    abstract
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_execute"></a>
+                        <div class="element clickable method protected  method_execute" data-toggle="collapse" data-target=".method_execute .collapse">
+                            <h2>Execute the current command.</h2>
+                            <pre>execute(\Freyja\CLI\Input\InputInterface $input, \Freyja\CLI\Output\OutputInterface $output) : null|integer</pre>
+                            <div class="labels">
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>protected</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    abstract
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$input</h4>
+                                                <code><a href="../classes/Freyja.CLI.Input.InputInterface.html">\Freyja\CLI\Input\InputInterface</a></code><p><p>InputInterface instance.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$output</h4>
+                                                <code><a href="../classes/Freyja.CLI.Output.OutputInterface.html">\Freyja\CLI\Output\OutputInterface</a></code><p><p>OutputInterface instance.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>null|integer</code><p><p>null or 0 if everything went fine, or an error code.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAliases"></a>
+                        <div class="element clickable method public  method_getAliases" data-toggle="collapse" data-target=".method_getAliases .collapse">
+                            <h2>Retrieve aliases for the command.</h2>
+                            <pre>getAliases() : array</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>Array of aliases for the command.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDefinition"></a>
+                        <div class="element clickable method public  method_getDefinition" data-toggle="collapse" data-target=".method_getDefinition .collapse">
+                            <h2>Retrieve Definition attached to this Command.</h2>
+                            <pre>getDefinition() : \Freyja\CLI\Input\Definition</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Input.Definition.html">\Freyja\CLI\Input\Definition</a></code><p><p>Input definition of this Command.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDescription"></a>
+                        <div class="element clickable method public  method_getDescription" data-toggle="collapse" data-target=".method_getDescription .collapse">
+                            <h2>Retrieve command description.</h2>
+                            <pre>getDescription() : string</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>Command description.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getHelp"></a>
+                        <div class="element clickable method public  method_getHelp" data-toggle="collapse" data-target=".method_getHelp .collapse">
+                            <h2>Retrieve help for the command.</h2>
+                            <pre>getHelp() : string</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>Help for the command.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getHelper"></a>
+                        <div class="element clickable method public  method_getHelper" data-toggle="collapse" data-target=".method_getHelper .collapse">
+                            <h2>Retrieve helper instance by name.</h2>
+                            <pre>getHelper(string $name) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>if the helper is not defined.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Helper name.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Helper value.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getHelperSet"></a>
+                        <div class="element clickable method public  method_getHelperSet" data-toggle="collapse" data-target=".method_getHelperSet .collapse">
+                            <h2>Retrieve helper set.</h2>
+                            <pre>getHelperSet() : \Freyja\CLI\Commands\HelperSet</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Freyja\CLI\Commands\HelperSet</code><p><p>HelperSet instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getName"></a>
+                        <div class="element clickable method public  method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+                            <h2>Retrieve command name.</h2>
+                            <pre>getName() : string</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>Command name.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getProcessedHelp"></a>
+                        <div class="element clickable method public  method_getProcessedHelp" data-toggle="collapse" data-target=".method_getProcessedHelp .collapse">
+                            <h2>Retrieve processed help for the command.</h2>
+                            <pre>getProcessedHelp() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Replaces the %command.name% and %command.full_name% patterns with the real
+values dynamically.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getSynopsis"></a>
+                        <div class="element clickable method public  method_getSynopsis" data-toggle="collapse" data-target=".method_getSynopsis .collapse">
+                            <h2>Retrieve synopsis for the command.</h2>
+                            <pre>getSynopsis(boolean $short = false) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$short</h4>
+                                                <code>boolean</code><p><p>Whether to show the short version of the synopsis (with
+options folded) or not.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The synopsis.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getUsages"></a>
+                        <div class="element clickable method public  method_getUsages" data-toggle="collapse" data-target=".method_getUsages .collapse">
+                            <h2>Retrieve alternative usages of the command.</h2>
+                            <pre>getUsages() : array</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ignoreValidationErrors"></a>
+                        <div class="element clickable method public  method_ignoreValidationErrors" data-toggle="collapse" data-target=".method_ignoreValidationErrors .collapse">
+                            <h2>Ignore validation errors.</h2>
+                            <pre>ignoreValidationErrors() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is mainly useful for the help command.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_initialize"></a>
+                        <div class="element clickable method protected  method_initialize" data-toggle="collapse" data-target=".method_initialize .collapse">
+                            <h2>Initialize command just after input has been validated.</h2>
+                            <pre>initialize(\Freyja\CLI\Input\InputInterface $input, \Freyja\CLI\Output\OutputInterface $output) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is mainly useful when a lot of commands extend one main command where
+some things need to be initialized based on the input arguments and options.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>protected</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$input</h4>
+                                                <code><a href="../classes/Freyja.CLI.Input.InputInterface.html">\Freyja\CLI\Input\InputInterface</a></code><p><p>InputInterface instance.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$output</h4>
+                                                <code><a href="../classes/Freyja.CLI.Output.OutputInterface.html">\Freyja\CLI\Output\OutputInterface</a></code><p><p>OutputInterface instance.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_interact"></a>
+                        <div class="element clickable method protected  method_interact" data-toggle="collapse" data-target=".method_interact .collapse">
+                            <h2>Interact with the user.</h2>
+                            <pre>interact(\Freyja\CLI\Input\InputInterface $input, \Freyja\CLI\Output\OutputInterface $output) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This method is executed before the Definition is validated.
+This means that this is the only place where the command can interactively
+ask for values of missing required arguments.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>protected</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$input</h4>
+                                                <code><a href="../classes/Freyja.CLI.Input.InputInterface.html">\Freyja\CLI\Input\InputInterface</a></code><p><p>InputInterface instance.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$output</h4>
+                                                <code><a href="../classes/Freyja.CLI.Output.OutputInterface.html">\Freyja\CLI\Output\OutputInterface</a></code><p><p>OutputInterface instance.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isEnabled"></a>
+                        <div class="element clickable method public  method_isEnabled" data-toggle="collapse" data-target=".method_isEnabled .collapse">
+                            <h2>Whether command is enabled or not in the current environment.</h2>
+                            <pre>isEnabled() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This should return false if the command can not run properly under the
+current conditions.</p>
+<p>Override this to implement checks needed by your command.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_run"></a>
+                        <div class="element clickable method public  method_run" data-toggle="collapse" data-target=".method_run .collapse">
+                            <h2>Run the command.</h2>
+                            <pre>run(\Freyja\CLI\Input\InputInterface $input, \Freyja\CLI\Output\OutputInterface $output) : integer</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The code to execute is defined in the execute() method.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \Freyja\CLI\Commands\CommandInterface::execute()
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$input</h4>
+                                                <code><a href="../classes/Freyja.CLI.Input.InputInterface.html">\Freyja\CLI\Input\InputInterface</a></code><p><p>Command input.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$output</h4>
+                                                <code><a href="../classes/Freyja.CLI.Output.OutputInterface.html">\Freyja\CLI\Output\OutputInterface</a></code><p><p>Command output.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p><p>Command exit code.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setAliases"></a>
+                        <div class="element clickable method public  method_setAliases" data-toggle="collapse" data-target=".method_setAliases .collapse">
+                            <h2>Set aliases for the command.</h2>
+                            <pre>setAliases(array&lt;mixed,string&gt; $aliases) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>if an alias is invalid.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$aliases</h4>
+                                                <code>array&lt;mixed,string&gt;</code><p><p>Array of aliases for the command.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDefinition"></a>
+                        <div class="element clickable method public  method_setDefinition" data-toggle="collapse" data-target=".method_setDefinition .collapse">
+                            <h2>Set array of argument and option instances.</h2>
+                            <pre>setDefinition(array|\Freyja\CLI\Input\Definition $definition) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                <span class="label">final</span>                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    final
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$definition</h4>
+                                                <code>array|<a href="../classes/Freyja.CLI.Input.Definition.html">\Freyja\CLI\Input\Definition</a></code><p><p>Aray of argument and option
+instances or a definition instance.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDescription"></a>
+                        <div class="element clickable method public  method_setDescription" data-toggle="collapse" data-target=".method_setDescription .collapse">
+                            <h2>Set description for the command.</h2>
+                            <pre>setDescription(string $description) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$description</h4>
+                                                <code>string</code><p><p>Description for the command.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setHelp"></a>
+                        <div class="element clickable method public  method_setHelp" data-toggle="collapse" data-target=".method_setHelp .collapse">
+                            <h2>Set help for the command.</h2>
+                            <pre>setHelp(string $help) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$help</h4>
+                                                <code>string</code><p><p>Help for the command.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setHelperSet"></a>
+                        <div class="element clickable method public  method_setHelperSet" data-toggle="collapse" data-target=".method_setHelperSet .collapse">
+                            <h2>Set helper set.</h2>
+                            <pre>setHelperSet(\Freyja\CLI\Commands\HelperSet $helper_set) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$helper_set</h4>
+                                                <code>\Freyja\CLI\Commands\HelperSet</code><p><p>HelperSet instance.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setName"></a>
+                        <div class="element clickable method public  method_setName" data-toggle="collapse" data-target=".method_setName .collapse">
+                            <h2>Set name of command.</h2>
+                            <pre>setName(string $name) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This method can set both the namespace and the name if you separate them
+by a colon (:).</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    example
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>if the name is invalid.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Command name.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setProcessTitle"></a>
+                        <div class="element clickable method public  method_setProcessTitle" data-toggle="collapse" data-target=".method_setProcessTitle .collapse">
+                            <h2>Set process title of the command.</h2>
+                            <pre>setProcessTitle(string $title) : \Freyja\CLI\Commands\CommandInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This feature should be used only when creating a long process command, like a daemon.</p>
+<p>PHP 5.5+ or the proctitle PECL library is required.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>public</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$title</h4>
+                                                <code>string</code><p><p>Process title.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Freyja.CLI.Commands.CommandInterface.html">\Freyja\CLI\Commands\CommandInterface</a></code><p><p>The current instance.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_validateName"></a>
+                        <div class="element clickable method private  method_validateName" data-toggle="collapse" data-target=".method_validateName .collapse">
+                            <h2>Validate command name.</h2>
+                            <pre>validateName(string $name) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>It must be non-empty and parts can optionally be separated by &quot;:&quot;.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>private</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    throw
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>if name is invalid.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Command name.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_name"> </a>
+                            <div class="element clickable property  private property_name" data-toggle="collapse" data-target=".property_name .collapse">
+                                <h2>Command name.</h2>
+                                <pre>name : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_process_title"> </a>
+                            <div class="element clickable property  private property_process_title" data-toggle="collapse" data-target=".property_process_title .collapse">
+                                <h2>Process title.</h2>
+                                <pre>process_title : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_aliases"> </a>
+                            <div class="element clickable property  private property_aliases" data-toggle="collapse" data-target=".property_aliases .collapse">
+                                <h2>Command aliases.</h2>
+                                <pre>aliases : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_definition"> </a>
+                            <div class="element clickable property  private property_definition" data-toggle="collapse" data-target=".property_definition .collapse">
+                                <h2>Input definition.</h2>
+                                <pre>definition : \Freyja\CLI\Input\Definition</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Freyja.CLI.Input.Definition.html">\Freyja\CLI\Input\Definition</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_help"> </a>
+                            <div class="element clickable property  private property_help" data-toggle="collapse" data-target=".property_help .collapse">
+                                <h2>Command help.</h2>
+                                <pre>help : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_helper_set"> </a>
+                            <div class="element clickable property  private property_helper_set" data-toggle="collapse" data-target=".property_helper_set .collapse">
+                                <h2>Helper Set associated with command.</h2>
+                                <pre>helper_set : \Freyja\CLI\Commands\HelperSet</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Freyja\CLI\Commands\HelperSet</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_description"> </a>
+                            <div class="element clickable property  private property_description" data-toggle="collapse" data-target=".property_description .collapse">
+                                <h2>Command description.</h2>
+                                <pre>description : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_ignoreValidationErrors"> </a>
+                            <div class="element clickable property  private property_ignoreValidationErrors" data-toggle="collapse" data-target=".property_ignoreValidationErrors .collapse">
+                                <h2>Whether to ignore validation errors.</h2>
+                                <pre>ignoreValidationErrors : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_synopsis"> </a>
+                            <div class="element clickable property  private property_synopsis" data-toggle="collapse" data-target=".property_synopsis .collapse">
+                                <h2>Command Synopsis.</h2>
+                                <pre>synopsis : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_usages"> </a>
+                            <div class="element clickable property  private property_usages" data-toggle="collapse" data-target=".property_usages .collapse">
+                                <h2>Command usages.</h2>
+                                <pre>usages : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Freyja\CLI\Commands\Command"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Freyja.CLI.Commands.html">Commands</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Freyja.CLI.Commands.Command.html">Command</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Mon, 15 Feb 2016 17:33:53 +0000.<br/>
+    </footer>
+    </body>
+</html>

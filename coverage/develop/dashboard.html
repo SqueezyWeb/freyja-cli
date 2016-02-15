@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/travis/build/SqueezyWeb/freyja-cli/Lib</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nv.d3.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/home/travis/build/SqueezyWeb/freyja-cli/Lib</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#22">FormatterHelper</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#22">Helper</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FreyjaCLI.php.html#22">FreyjaCLI</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#25">DescriptorHelper</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/ListCommand.php.html#27">ListCommand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/HelpCommand.php.html#27">HelpCommand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#27">NullOutput</a></td><td class="text-right">38%</td></tr>
+       <tr><td><a href="Output/ConsoleOutput.php.html#30">ConsoleOutput</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#29">Command</a></td><td class="text-right">74%</td></tr>
+       <tr><td><a href="Testers/CommandTester.php.html#26">CommandTester</a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Descriptors/Descriptor.php.html#29">Descriptor</a></td><td class="text-right">85%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#22">FormatterHelper</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#22">Helper</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="FreyjaCLI.php.html#22">FreyjaCLI</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Commands/Command.php.html#29">Command</a></td><td class="text-right">85</td></tr>
+       <tr><td><a href="Output/ConsoleOutput.php.html#30">ConsoleOutput</a></td><td class="text-right">31</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#25">DescriptorHelper</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Commands/HelpCommand.php.html#27">HelpCommand</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Testers/CommandTester.php.html#26">CommandTester</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Descriptors/Descriptor.php.html#29">Descriptor</a></td><td class="text-right">11</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Helpers/Helper.php.html#140"><abbr title="Helper::strlenWithoutDecoration">strlenWithoutDecoration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#118"><abbr title="Helper::formatMemory">formatMemory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Input/ArgvInput.php.html#92"><abbr title="ArgvInput::setTokens">setTokens</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Input/Input.php.html#270"><abbr title="Input::hasOption">hasOption</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/ConsoleOutput.php.html#84"><abbr title="ConsoleOutput::setFormatter">setFormatter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/ConsoleOutput.php.html#71"><abbr title="ConsoleOutput::setDecorated">setDecorated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#85"><abbr title="Helper::formatTime">formatTime</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#67"><abbr title="Helper::strlen">strlen</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#88"><abbr title="FormatterHelper::truncate">truncate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#51"><abbr title="FormatterHelper::formatBlock">formatBlock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#103"><abbr title="FormatterHelper::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#40"><abbr title="Helper::setHelperSet">setHelperSet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#52"><abbr title="Helper::getHelperSet">getHelperSet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/ConsoleOutput.php.html#97"><abbr title="ConsoleOutput::setVerbosity">setVerbosity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/ConsoleOutput.php.html#117"><abbr title="ConsoleOutput::setErrorOutput">setErrorOutput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/Output.php.html#77"><abbr title="Output::setFormatter">setFormatter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#160"><abbr title="NullOutput::doWrite">doWrite</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Testers/CommandTester.php.html#142"><abbr title="CommandTester::getInput">getInput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Testers/CommandTester.php.html#154"><abbr title="CommandTester::getOutput">getOutput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Testers/CommandTester.php.html#166"><abbr title="CommandTester::getStatusCode">getStatusCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#115"><abbr title="NullOutput::isDebug">isDebug</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#108"><abbr title="NullOutput::isVeryVerbose">isVeryVerbose</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#43"><abbr title="NullOutput::getFormatter">getFormatter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#36"><abbr title="NullOutput::setFormatter">setFormatter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#56"><abbr title="NullOutput::setDecorated">setDecorated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#94"><abbr title="NullOutput::isQuiet">isQuiet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Output/NullOutput.php.html#101"><abbr title="NullOutput::isVerbose">isVerbose</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#35"><abbr title="FormatterHelper::formatSection">formatSection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#95"><abbr title="DescriptorHelper::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/HelpCommand.php.html#84"><abbr title="HelpCommand::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/HelpCommand.php.html#72"><abbr title="HelpCommand::setCommand">setCommand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/ListCommand.php.html#31"><abbr title="ListCommand::configure">configure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/ListCommand.php.html#58"><abbr title="ListCommand::getNativeDefinition">getNativeDefinition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/ListCommand.php.html#68"><abbr title="ListCommand::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/HelpCommand.php.html#40"><abbr title="HelpCommand::configure">configure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#579"><abbr title="Command::addUsage">addUsage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#163"><abbr title="Command::setHelperSet">setHelperSet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#151"><abbr title="Command::getHelperSet">getHelperSet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#179"><abbr title="Command::getHelper">getHelper</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#196"><abbr title="Command::isEnabled">isEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#418"><abbr title="Command::setProcessTitle">setProcessTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#139"><abbr title="Command::ignoreValidationErrors">ignoreValidationErrors</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/ListCommand.php.html#81"><abbr title="ListCommand::createDefinition">createDefinition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FreyjaCLI.php.html#85"><abbr title="FreyjaCLI::getExternalCommands">getExternalCommands</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#41"><abbr title="DescriptorHelper::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#62"><abbr title="DescriptorHelper::describe">describe</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#86"><abbr title="DescriptorHelper::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FreyjaCLI.php.html#69"><abbr title="FreyjaCLI::setLogger">setLogger</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Formatters/Styles/StyleStack.php.html#134"><abbr title="StyleStack::setEmptyStyle">setEmptyStyle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Descriptors/TextDescriptor.php.html#255"><abbr title="TextDescriptor::getColumnWidth">getColumnWidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Formatters/OutputFormatter.php.html#165"><abbr title="OutputFormatter::getStyleStack">getStyleStack</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Commands/Command.php.html#272"><abbr title="Command::run">run</abbr></a></td><td class="text-right">65%</td></tr>
+       <tr><td><a href="Formatters/Styles/Style.php.html#368"><abbr title="Style::setColor">setColor</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Formatters/Styles/Style.php.html#232"><abbr title="Style::setUnset">setUnset</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="Descriptors/Descriptor.php.html#49"><abbr title="Descriptor::describe">describe</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="Descriptors/TextDescriptor.php.html#115"><abbr title="TextDescriptor::describeInputDefinition">describeInputDefinition</abbr></a></td><td class="text-right">86%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#51"><abbr title="FormatterHelper::formatBlock">formatBlock</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="FreyjaCLI.php.html#85"><abbr title="FreyjaCLI::getExternalCommands">getExternalCommands</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#85"><abbr title="Helper::formatTime">formatTime</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#118"><abbr title="Helper::formatMemory">formatMemory</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Commands/Command.php.html#272"><abbr title="Command::run">run</abbr></a></td><td class="text-right">16</td></tr>
+       <tr><td><a href="Helpers/FormatterHelper.php.html#88"><abbr title="FormatterHelper::truncate">truncate</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Descriptors/TextDescriptor.php.html#255"><abbr title="TextDescriptor::getColumnWidth">getColumnWidth</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Commands/HelpCommand.php.html#84"><abbr title="HelpCommand::execute">execute</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Descriptors/TextDescriptor.php.html#115"><abbr title="TextDescriptor::describeInputDefinition">describeInputDefinition</abbr></a></td><td class="text-right">10</td></tr>
+       <tr><td><a href="Commands/Command.php.html#579"><abbr title="Command::addUsage">addUsage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Helpers/DescriptorHelper.php.html#62"><abbr title="DescriptorHelper::describe">describe</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Helpers/Helper.php.html#67"><abbr title="Helper::strlen">strlen</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Formatters/Styles/Style.php.html#232"><abbr title="Style::setUnset">setUnset</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Descriptors/Descriptor.php.html#49"><abbr title="Descriptor::describe">describe</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Formatters/Styles/Style.php.html#368"><abbr title="Style::setColor">setColor</abbr></a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.2.4</a> using <a href="http://php.net/" target="_top">PHP 5.5.32</a> and <a href="https://phpunit.de/">PHPUnit 4.8.22</a> at Mon Feb 15 17:33:45 UTC 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/holder.min.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([6,0,0,0,1,0,0,1,1,2,7,9], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([51,0,0,0,0,0,0,1,1,3,2,181], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[74.683544303797,48,"<a href=\"Commands\/Command.php.html#29\">Command<\/a>"],[0,5,"<a href=\"Commands\/HelpCommand.php.html#27\">HelpCommand<\/a>"],[0,4,"<a href=\"Commands\/ListCommand.php.html#27\">ListCommand<\/a>"],[85,11,"<a href=\"Descriptors\/Descriptor.php.html#29\">Descriptor<\/a>"],[90.598290598291,44,"<a href=\"Descriptors\/TextDescriptor.php.html#26\">TextDescriptor<\/a>"],[100,1,"<a href=\"Exceptions\/InvalidArgumentException.php.html#22\">InvalidArgumentException<\/a>"],[100,4,"<a href=\"Exceptions\/InvalidOptionException.php.html#20\">InvalidOptionException<\/a>"],[97.435897435897,18,"<a href=\"Formatters\/OutputFormatter.php.html#25\">OutputFormatter<\/a>"],[95.192307692308,51,"<a href=\"Formatters\/Styles\/Style.php.html#22\">Style<\/a>"],[92,11,"<a href=\"Formatters\/Styles\/StyleStack.php.html#22\">StyleStack<\/a>"],[0,9,"<a href=\"FreyjaCLI.php.html#22\">FreyjaCLI<\/a>"],[0,5,"<a href=\"Helpers\/DescriptorHelper.php.html#25\">DescriptorHelper<\/a>"],[0,14,"<a href=\"Helpers\/FormatterHelper.php.html#22\">FormatterHelper<\/a>"],[0,14,"<a href=\"Helpers\/Helper.php.html#22\">Helper<\/a>"],[100,11,"<a href=\"Helpers\/HelperSet.php.html#23\">HelperSet<\/a>"],[100,16,"<a href=\"Input\/Argument.php.html#22\">Argument<\/a>"],[97.272727272727,67,"<a href=\"Input\/ArgvInput.php.html#42\">ArgvInput<\/a>"],[100,39,"<a href=\"Input\/ArrayInput.php.html#27\">ArrayInput<\/a>"],[100,61,"<a href=\"Input\/Definition.php.html#30\">Definition<\/a>"],[97.5,27,"<a href=\"Input\/Input.php.html#25\">Input<\/a>"],[100,33,"<a href=\"Input\/Option.php.html#22\">Option<\/a>"],[100,3,"<a href=\"Output\/BufferedOutput.php.html#20\">BufferedOutput<\/a>"],[60.714285714286,16,"<a href=\"Output\/ConsoleOutput.php.html#30\">ConsoleOutput<\/a>"],[38.461538461538,13,"<a href=\"Output\/NullOutput.php.html#27\">NullOutput<\/a>"],[94.736842105263,23,"<a href=\"Output\/Output.php.html#31\">Output<\/a>"],[100,13,"<a href=\"Output\/StreamOutput.php.html#32\">StreamOutput<\/a>"],[85,12,"<a href=\"Testers\/CommandTester.php.html#26\">CommandTester<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Commands\/Command.php.html#126\">Command::__construct<\/a>"],[0,1,"<a href=\"Commands\/Command.php.html#139\">Command::ignoreValidationErrors<\/a>"],[0,1,"<a href=\"Commands\/Command.php.html#151\">Command::getHelperSet<\/a>"],[0,1,"<a href=\"Commands\/Command.php.html#163\">Command::setHelperSet<\/a>"],[0,1,"<a href=\"Commands\/Command.php.html#179\">Command::getHelper<\/a>"],[0,1,"<a href=\"Commands\/Command.php.html#196\">Command::isEnabled<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#207\">Command::configure<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#220\">Command::execute<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#235\">Command::interact<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#251\">Command::initialize<\/a>"],[65,11,"<a href=\"Commands\/Command.php.html#272\">Command::run<\/a>"],[100,2,"<a href=\"Commands\/Command.php.html#320\">Command::setDefinition<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#338\">Command::getDefinition<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#357\">Command::addArgument<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#377\">Command::addOption<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#399\">Command::setName<\/a>"],[0,1,"<a href=\"Commands\/Command.php.html#418\">Command::setProcessTitle<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#432\">Command::getName<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#445\">Command::setDescription<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#459\">Command::getDescription<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#472\">Command::setHelp<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#486\">Command::getHelp<\/a>"],[100,2,"<a href=\"Commands\/Command.php.html#501\">Command::getProcessedHelp<\/a>"],[100,4,"<a href=\"Commands\/Command.php.html#527\">Command::setAliases<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#547\">Command::getAliases<\/a>"],[100,3,"<a href=\"Commands\/Command.php.html#561\">Command::getSynopsis<\/a>"],[0,2,"<a href=\"Commands\/Command.php.html#579\">Command::addUsage<\/a>"],[100,1,"<a href=\"Commands\/Command.php.html#597\">Command::getUsages<\/a>"],[100,2,"<a href=\"Commands\/Command.php.html#613\">Command::validateName<\/a>"],[0,1,"<a href=\"Commands\/HelpCommand.php.html#40\">HelpCommand::configure<\/a>"],[0,1,"<a href=\"Commands\/HelpCommand.php.html#72\">HelpCommand::setCommand<\/a>"],[0,3,"<a href=\"Commands\/HelpCommand.php.html#84\">HelpCommand::execute<\/a>"],[0,1,"<a href=\"Commands\/ListCommand.php.html#31\">ListCommand::configure<\/a>"],[0,1,"<a href=\"Commands\/ListCommand.php.html#58\">ListCommand::getNativeDefinition<\/a>"],[0,1,"<a href=\"Commands\/ListCommand.php.html#68\">ListCommand::execute<\/a>"],[0,1,"<a href=\"Commands\/ListCommand.php.html#81\">ListCommand::createDefinition<\/a>"],[83.333333333333,5,"<a href=\"Descriptors\/Descriptor.php.html#49\">Descriptor::describe<\/a>"],[100,2,"<a href=\"Descriptors\/Descriptor.php.html#79\">Descriptor::write<\/a>"],[100,1,"<a href=\"Descriptors\/Descriptor.php.html#95\">Descriptor::describeInputArgument<\/a>"],[100,1,"<a href=\"Descriptors\/Descriptor.php.html#109\">Descriptor::describeInputOption<\/a>"],[100,1,"<a href=\"Descriptors\/Descriptor.php.html#123\">Descriptor::describeInputDefinition<\/a>"],[100,1,"<a href=\"Descriptors\/Descriptor.php.html#137\">Descriptor::describeCommand<\/a>"],[100,5,"<a href=\"Descriptors\/TextDescriptor.php.html#39\">TextDescriptor::describeInputArgument<\/a>"],[100,10,"<a href=\"Descriptors\/TextDescriptor.php.html#69\">TextDescriptor::describeInputOption<\/a>"],[86.206896551724,10,"<a href=\"Descriptors\/TextDescriptor.php.html#115\">TextDescriptor::describeInputDefinition<\/a>"],[100,5,"<a href=\"Descriptors\/TextDescriptor.php.html#162\">TextDescriptor::describeCommand<\/a>"],[100,4,"<a href=\"Descriptors\/TextDescriptor.php.html#199\">TextDescriptor::writeText<\/a>"],[100,1,"<a href=\"Descriptors\/TextDescriptor.php.html#212\">TextDescriptor::writeNewLine<\/a>"],[100,2,"<a href=\"Descriptors\/TextDescriptor.php.html#232\">TextDescriptor::formatDefaultValue<\/a>"],[0,3,"<a href=\"Descriptors\/TextDescriptor.php.html#255\">TextDescriptor::getColumnWidth<\/a>"],[100,4,"<a href=\"Descriptors\/TextDescriptor.php.html#276\">TextDescriptor::calculateTotalWidthForOptions<\/a>"],[100,1,"<a href=\"Exceptions\/InvalidArgumentException.php.html#34\">InvalidArgumentException::notFound<\/a>"],[100,1,"<a href=\"Exceptions\/InvalidOptionException.php.html#32\">InvalidOptionException::notFound<\/a>"],[100,1,"<a href=\"Exceptions\/InvalidOptionException.php.html#47\">InvalidOptionException::valueRequired<\/a>"],[100,2,"<a href=\"Exceptions\/InvalidOptionException.php.html#64\">InvalidOptionException::getDashes<\/a>"],[100,1,"<a href=\"Formatters\/OutputFormatter.php.html#64\">OutputFormatter::escape<\/a>"],[100,2,"<a href=\"Formatters\/OutputFormatter.php.html#78\">OutputFormatter::__construct<\/a>"],[100,1,"<a href=\"Formatters\/OutputFormatter.php.html#101\">OutputFormatter::setDecorated<\/a>"],[100,1,"<a href=\"Formatters\/OutputFormatter.php.html#108\">OutputFormatter::isDecorated<\/a>"],[100,1,"<a href=\"Formatters\/OutputFormatter.php.html#122\">OutputFormatter::setStyle<\/a>"],[100,1,"<a href=\"Formatters\/OutputFormatter.php.html#136\">OutputFormatter::hasStyle<\/a>"],[100,2,"<a href=\"Formatters\/OutputFormatter.php.html#150\">OutputFormatter::getStyle<\/a>"],[0,1,"<a href=\"Formatters\/OutputFormatter.php.html#165\">OutputFormatter::getStyleStack<\/a>"],[100,1,"<a href=\"Formatters\/OutputFormatter.php.html#179\">OutputFormatter::format<\/a>"],[100,7,"<a href=\"Formatters\/OutputFormatter.php.html#197\">OutputFormatter::formatCallback<\/a>"],[100,4,"<a href=\"Formatters\/Styles\/Style.php.html#116\">Style::__construct<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/Style.php.html#135\">Style::setForeground<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/Style.php.html#153\">Style::setBackground<\/a>"],[100,4,"<a href=\"Formatters\/Styles\/Style.php.html#171\">Style::setOption<\/a>"],[100,4,"<a href=\"Formatters\/Styles\/Style.php.html#193\">Style::unsetOption<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/Style.php.html#213\">Style::setOptions<\/a>"],[81.818181818182,5,"<a href=\"Formatters\/Styles\/Style.php.html#232\">Style::setUnset<\/a>"],[92.857142857143,7,"<a href=\"Formatters\/Styles\/Style.php.html#253\">Style::resetUnset<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/Style.php.html#282\">Style::getForeground<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/Style.php.html#297\">Style::getBackground<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/Style.php.html#309\">Style::getOptions<\/a>"],[100,10,"<a href=\"Formatters\/Styles\/Style.php.html#323\">Style::apply<\/a>"],[77.777777777778,4,"<a href=\"Formatters\/Styles\/Style.php.html#368\">Style::setColor<\/a>"],[100,1,"<a href=\"Formatters\/Styles\/Style.php.html#394\">Style::invalidArgument<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/StyleStack.php.html#50\">StyleStack::__construct<\/a>"],[100,1,"<a href=\"Formatters\/Styles\/StyleStack.php.html#62\">StyleStack::reset<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/StyleStack.php.html#76\">StyleStack::push<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/StyleStack.php.html#101\">StyleStack::pop<\/a>"],[100,2,"<a href=\"Formatters\/Styles\/StyleStack.php.html#117\">StyleStack::getCurrent<\/a>"],[0,1,"<a href=\"Formatters\/Styles\/StyleStack.php.html#134\">StyleStack::setEmptyStyle<\/a>"],[100,1,"<a href=\"Formatters\/Styles\/StyleStack.php.html#148\">StyleStack::getEmptyStyle<\/a>"],[0,1,"<a href=\"FreyjaCLI.php.html#69\">FreyjaCLI::setLogger<\/a>"],[0,8,"<a href=\"FreyjaCLI.php.html#85\">FreyjaCLI::getExternalCommands<\/a>"],[0,1,"<a href=\"Helpers\/DescriptorHelper.php.html#41\">DescriptorHelper::__construct<\/a>"],[0,2,"<a href=\"Helpers\/DescriptorHelper.php.html#62\">DescriptorHelper::describe<\/a>"],[0,1,"<a href=\"Helpers\/DescriptorHelper.php.html#86\">DescriptorHelper::register<\/a>"],[0,1,"<a href=\"Helpers\/DescriptorHelper.php.html#95\">DescriptorHelper::getName<\/a>"],[0,1,"<a href=\"Helpers\/FormatterHelper.php.html#35\">FormatterHelper::formatSection<\/a>"],[0,9,"<a href=\"Helpers\/FormatterHelper.php.html#51\">FormatterHelper::formatBlock<\/a>"],[0,3,"<a href=\"Helpers\/FormatterHelper.php.html#88\">FormatterHelper::truncate<\/a>"],[0,1,"<a href=\"Helpers\/FormatterHelper.php.html#103\">FormatterHelper::getName<\/a>"],[0,1,"<a href=\"Helpers\/Helper.php.html#40\">Helper::setHelperSet<\/a>"],[0,1,"<a href=\"Helpers\/Helper.php.html#52\">Helper::getHelperSet<\/a>"],[0,2,"<a href=\"Helpers\/Helper.php.html#67\">Helper::strlen<\/a>"],[0,4,"<a href=\"Helpers\/Helper.php.html#85\">Helper::formatTime<\/a>"],[0,4,"<a href=\"Helpers\/Helper.php.html#118\">Helper::formatMemory<\/a>"],[0,1,"<a href=\"Helpers\/Helper.php.html#140\">Helper::strlenWithoutDecoration<\/a>"],[100,1,"<a href=\"Helpers\/Helper.php.html#155\">Helper::getName<\/a>"],[100,3,"<a href=\"Helpers\/HelperSet.php.html#50\">HelperSet::__construct<\/a>"],[100,2,"<a href=\"Helpers\/HelperSet.php.html#64\">HelperSet::set<\/a>"],[100,1,"<a href=\"Helpers\/HelperSet.php.html#83\">HelperSet::has<\/a>"],[100,2,"<a href=\"Helpers\/HelperSet.php.html#100\">HelperSet::get<\/a>"],[100,1,"<a href=\"Helpers\/HelperSet.php.html#115\">HelperSet::setCommand<\/a>"],[100,1,"<a href=\"Helpers\/HelperSet.php.html#127\">HelperSet::getCommand<\/a>"],[100,1,"<a href=\"Helpers\/HelperSet.php.html#139\">HelperSet::getIterator<\/a>"],[100,5,"<a href=\"Input\/Argument.php.html#101\">Argument::__construct<\/a>"],[100,1,"<a href=\"Input\/Argument.php.html#124\">Argument::getName<\/a>"],[100,1,"<a href=\"Input\/Argument.php.html#136\">Argument::isRequired<\/a>"],[100,1,"<a href=\"Input\/Argument.php.html#148\">Argument::isArray<\/a>"],[100,6,"<a href=\"Input\/Argument.php.html#162\">Argument::setDefault<\/a>"],[100,1,"<a href=\"Input\/Argument.php.html#183\">Argument::getDefault<\/a>"],[100,1,"<a href=\"Input\/Argument.php.html#195\">Argument::getDescription<\/a>"],[100,2,"<a href=\"Input\/ArgvInput.php.html#72\">ArgvInput::__construct<\/a>"],[0,1,"<a href=\"Input\/ArgvInput.php.html#92\">ArgvInput::setTokens<\/a>"],[100,11,"<a href=\"Input\/ArgvInput.php.html#102\">ArgvInput::parse<\/a>"],[100,4,"<a href=\"Input\/ArgvInput.php.html#128\">ArgvInput::parseShortOption<\/a>"],[100,2,"<a href=\"Input\/ArgvInput.php.html#154\">ArgvInput::parseLongOption<\/a>"],[100,5,"<a href=\"Input\/ArgvInput.php.html#173\">ArgvInput::parseArgument<\/a>"],[100,2,"<a href=\"Input\/ArgvInput.php.html#201\">ArgvInput::addShortOption<\/a>"],[100,16,"<a href=\"Input\/ArgvInput.php.html#219\">ArgvInput::addLongOption<\/a>"],[100,4,"<a href=\"Input\/ArgvInput.php.html#265\">ArgvInput::getFirstArgument<\/a>"],[100,7,"<a href=\"Input\/ArgvInput.php.html#289\">ArgvInput::hasParameterOption<\/a>"],[92.857142857143,8,"<a href=\"Input\/ArgvInput.php.html#321\">ArgvInput::getParameterOption<\/a>"],[100,1,"<a href=\"Input\/ArgvInput.php.html#350\">ArgvInput::__toString<\/a>"],[100,4,"<a href=\"Input\/ArgvInput.php.html#374\">ArgvInput::toStringCallback<\/a>"],[100,1,"<a href=\"Input\/ArrayInput.php.html#47\">ArrayInput::__construct<\/a>"],[100,4,"<a href=\"Input\/ArrayInput.php.html#61\">ArrayInput::getFirstArgument<\/a>"],[100,6,"<a href=\"Input\/ArrayInput.php.html#86\">ArrayInput::hasParameterOption<\/a>"],[100,9,"<a href=\"Input\/ArrayInput.php.html#121\">ArrayInput::getParameterOption<\/a>"],[100,5,"<a href=\"Input\/ArrayInput.php.html#147\">ArrayInput::__toString<\/a>"],[100,5,"<a href=\"Input\/ArrayInput.php.html#166\">ArrayInput::parse<\/a>"],[100,2,"<a href=\"Input\/ArrayInput.php.html#192\">ArrayInput::addShortOption<\/a>"],[100,5,"<a href=\"Input\/ArrayInput.php.html#211\">ArrayInput::addLongOption<\/a>"],[100,2,"<a href=\"Input\/ArrayInput.php.html#239\">ArrayInput::addArgument<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#94\">Definition::__construct<\/a>"],[100,4,"<a href=\"Input\/Definition.php.html#106\">Definition::setDefinition<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#129\">Definition::setArguments<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#146\">Definition::addArguments<\/a>"],[100,7,"<a href=\"Input\/Definition.php.html#160\">Definition::addArgument<\/a>"],[100,3,"<a href=\"Input\/Definition.php.html#191\">Definition::getArgument<\/a>"],[100,2,"<a href=\"Input\/Definition.php.html#210\">Definition::hasArgument<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#224\">Definition::getArguments<\/a>"],[100,2,"<a href=\"Input\/Definition.php.html#236\">Definition::getArgumentCount<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#248\">Definition::getArgumentRequiredCount<\/a>"],[100,2,"<a href=\"Input\/Definition.php.html#260\">Definition::getArgumentDefaults<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#276\">Definition::setOptions<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#290\">Definition::addOptions<\/a>"],[100,9,"<a href=\"Input\/Definition.php.html#304\">Definition::addOption<\/a>"],[100,2,"<a href=\"Input\/Definition.php.html#331\">Definition::getOption<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#347\">Definition::hasOption<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#359\">Definition::getOptions<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#372\">Definition::hasShortcut<\/a>"],[100,1,"<a href=\"Input\/Definition.php.html#385\">Definition::getOptionByShortcut<\/a>"],[100,2,"<a href=\"Input\/Definition.php.html#397\">Definition::getOptionDefaults<\/a>"],[100,2,"<a href=\"Input\/Definition.php.html#417\">Definition::shortcutToName<\/a>"],[100,15,"<a href=\"Input\/Definition.php.html#434\">Definition::getSynopsis<\/a>"],[100,2,"<a href=\"Input\/Input.php.html#70\">Input::__construct<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#87\">Input::bind<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#102\">Input::parse<\/a>"],[100,3,"<a href=\"Input\/Input.php.html#112\">Input::validate<\/a>"],[100,2,"<a href=\"Input\/Input.php.html#116\">Input::anonymous function<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#132\">Input::isInteractive<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#144\">Input::setInteractive<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#156\">Input::getArguments<\/a>"],[100,3,"<a href=\"Input\/Input.php.html#172\">Input::getArgument<\/a>"],[100,2,"<a href=\"Input\/Input.php.html#191\">Input::setArgument<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#207\">Input::hasArgument<\/a>"],[100,1,"<a href=\"Input\/Input.php.html#219\">Input::getOptions<\/a>"],[100,3,"<a href=\"Input\/Input.php.html#235\">Input::getOption<\/a>"],[100,2,"<a href=\"Input\/Input.php.html#254\">Input::setOption<\/a>"],[0,1,"<a href=\"Input\/Input.php.html#270\">Input::hasOption<\/a>"],[100,2,"<a href=\"Input\/Input.php.html#283\">Input::escapeToken<\/a>"],[100,12,"<a href=\"Input\/Option.php.html#122\">Option::__construct<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#168\">Option::getShortcut<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#180\">Option::getName<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#192\">Option::acceptValue<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#204\">Option::isValueRequired<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#216\">Option::isValueOptional<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#228\">Option::isArray<\/a>"],[100,7,"<a href=\"Input\/Option.php.html#242\">Option::setDefault<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#263\">Option::getDefault<\/a>"],[100,1,"<a href=\"Input\/Option.php.html#275\">Option::getDescription<\/a>"],[100,6,"<a href=\"Input\/Option.php.html#288\">Option::equals<\/a>"],[100,1,"<a href=\"Output\/BufferedOutput.php.html#38\">BufferedOutput::fetch<\/a>"],[100,2,"<a href=\"Output\/BufferedOutput.php.html#55\">BufferedOutput::doWrite<\/a>"],[100,3,"<a href=\"Output\/ConsoleOutput.php.html#53\">ConsoleOutput::__construct<\/a>"],[0,1,"<a href=\"Output\/ConsoleOutput.php.html#71\">ConsoleOutput::setDecorated<\/a>"],[0,1,"<a href=\"Output\/ConsoleOutput.php.html#84\">ConsoleOutput::setFormatter<\/a>"],[0,1,"<a href=\"Output\/ConsoleOutput.php.html#97\">ConsoleOutput::setVerbosity<\/a>"],[100,1,"<a href=\"Output\/ConsoleOutput.php.html#105\">ConsoleOutput::getErrorOutput<\/a>"],[0,1,"<a href=\"Output\/ConsoleOutput.php.html#117\">ConsoleOutput::setErrorOutput<\/a>"],[100,1,"<a href=\"Output\/ConsoleOutput.php.html#129\">ConsoleOutput::hasStdoutSupport<\/a>"],[100,1,"<a href=\"Output\/ConsoleOutput.php.html#141\">ConsoleOutput::hasStderrSupport<\/a>"],[100,2,"<a href=\"Output\/ConsoleOutput.php.html#155\">ConsoleOutput::isRunningOS400<\/a>"],[100,1,"<a href=\"Output\/ConsoleOutput.php.html#173\">ConsoleOutput::openOutputStream<\/a>"],[100,1,"<a href=\"Output\/ConsoleOutput.php.html#185\">ConsoleOutput::openErrorStream<\/a>"],[100,2,"<a href=\"Output\/ConsoleOutput.php.html#198\">ConsoleOutput::openStream<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#36\">NullOutput::setFormatter<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#43\">NullOutput::getFormatter<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#56\">NullOutput::setDecorated<\/a>"],[100,1,"<a href=\"Output\/NullOutput.php.html#68\">NullOutput::isDecorated<\/a>"],[100,1,"<a href=\"Output\/NullOutput.php.html#80\">NullOutput::setVerbosity<\/a>"],[100,1,"<a href=\"Output\/NullOutput.php.html#87\">NullOutput::getVerbosity<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#94\">NullOutput::isQuiet<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#101\">NullOutput::isVerbose<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#108\">NullOutput::isVeryVerbose<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#115\">NullOutput::isDebug<\/a>"],[100,1,"<a href=\"Output\/NullOutput.php.html#130\">NullOutput::writeln<\/a>"],[100,1,"<a href=\"Output\/NullOutput.php.html#146\">NullOutput::write<\/a>"],[0,1,"<a href=\"Output\/NullOutput.php.html#160\">NullOutput::doWrite<\/a>"],[100,3,"<a href=\"Output\/Output.php.html#63\">Output::__construct<\/a>"],[0,1,"<a href=\"Output\/Output.php.html#77\">Output::setFormatter<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#84\">Output::getFormatter<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#96\">Output::setDecorated<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#103\">Output::isDecorated<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#115\">Output::setVerbosity<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#122\">Output::getVerbosity<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#129\">Output::isQuiet<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#136\">Output::isVerbose<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#143\">Output::isVeryVerbose<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#150\">Output::isDebug<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#165\">Output::writeln<\/a>"],[100,8,"<a href=\"Output\/Output.php.html#181\">Output::write<\/a>"],[100,1,"<a href=\"Output\/Output.php.html#219\">Output::doWrite<\/a>"],[100,4,"<a href=\"Output\/StreamOutput.php.html#58\">StreamOutput::__construct<\/a>"],[100,1,"<a href=\"Output\/StreamOutput.php.html#78\">StreamOutput::getStream<\/a>"],[100,3,"<a href=\"Output\/StreamOutput.php.html#88\">StreamOutput::doWrite<\/a>"],[100,5,"<a href=\"Output\/StreamOutput.php.html#108\">StreamOutput::hasColorSupport<\/a>"],[100,1,"<a href=\"Testers\/CommandTester.php.html#71\">CommandTester::__construct<\/a>"],[100,6,"<a href=\"Testers\/CommandTester.php.html#91\">CommandTester::execute<\/a>"],[100,2,"<a href=\"Testers\/CommandTester.php.html#123\">CommandTester::getDisplay<\/a>"],[0,1,"<a href=\"Testers\/CommandTester.php.html#142\">CommandTester::getInput<\/a>"],[0,1,"<a href=\"Testers\/CommandTester.php.html#154\">CommandTester::getOutput<\/a>"],[0,1,"<a href=\"Testers\/CommandTester.php.html#166\">CommandTester::getStatusCode<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
