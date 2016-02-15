@@ -43,7 +43,14 @@ class BufferedOutput extends Output {
   }
 
   /**
-   * {@inheritdoc}
+   * Write message to the output.
+   *
+   * @since 1.0.0
+   * @access protected
+   * @abstract
+   *
+   * @param string $message Message to write to the output.
+   * @param bool $newline Whether to add a newline or not.
    */
   protected function doWrite($message, $newline) {
     $this->buffer .= $message;

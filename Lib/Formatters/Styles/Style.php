@@ -218,7 +218,16 @@ class Style implements StyleInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set unset styles.
+   *
+   * Used to fully support nested styles.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @param int $foreground Color code for the foreground.
+   * @param int $background Color code for the background.
+   * @param array $options Optional. Array of options. Default empty.
    */
   public function setUnset($foreground, $background, array $options = array()) {
     if (!is_null($foreground)) {
