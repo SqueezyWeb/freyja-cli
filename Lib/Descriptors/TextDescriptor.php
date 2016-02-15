@@ -173,6 +173,12 @@ class TextDescriptor extends Descriptor {
   /**
    * Format input option/argument default value.
    *
+   * @internal Note that the behavior with PHP 5.3 this method may not behave
+   * as expected for multibyte unicode characters, as the constants
+   * `JSON_UNESCAPED_SLASHES` and `JSON_UNESCAPED_UNICODE` are available since
+   * PHP 5.4. We unescape slashes with `str_replace()` in PHP <5.4, but don't
+   * yet do anything about unicode characters.
+   *
    * @since 1.0.0
    * @access private
    *
@@ -181,6 +187,12 @@ class TextDescriptor extends Descriptor {
    * @return string
    */
   private function formatDefaultValue($default) {
+    $replacements = array(
+      '\\\\' => '\\',
+      '\/' => '/'
+    );
+    if (version_compare(PHP_VERSION, '5.4.0', '<'))
+      return str_replace(array_keys($replacements), array_values($replacements), json_encode($default));
     return str_replace('\\\\', '\\', json_encode($default, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
   }
 
