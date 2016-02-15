@@ -27,6 +27,6 @@ before_script:
   - mkdir -p coverage
 
 after_script:
-  - ./vendor/bin/phpdoc -q
+  - ./vendor/bin/phpdoc
   # phpDocumentor
   - bash .travis_after_script.sh
