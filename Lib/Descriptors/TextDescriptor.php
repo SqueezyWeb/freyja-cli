@@ -25,7 +25,16 @@ use Freyja\CLI\Input\Option;
  */
 class TextDescriptor extends Descriptor {
   /**
-   * {@inheritdoc}
+   * Describe Argument instance.
+   *
+   * @since 1.0.0
+   * @access protected
+   * @abstract
+   *
+   * @param Argument $argument
+   * @param array $options
+   *
+   * @return string|mixed
    */
   protected function describeInputArgument(Argument $argument, array $options = array()) {
     if (null !== $argument->getDefault() && (!is_array($argument->getDefault()) || count($argument->getDefault())))
@@ -46,7 +55,16 @@ class TextDescriptor extends Descriptor {
   }
 
   /**
-   * {@inheritdoc}
+   * Describe Option instance.
+   *
+   * @since 1.0.0
+   * @access protected
+   * @abstract
+   *
+   * @param Option $option
+   * @param array $options
+   *
+   * @return string|mixed
    */
   protected function describeInputOption(Option $option, array $options = array()) {
     if ($option->acceptValue() && null !== $option->getDefault() && (!is_array($option->getDefault()) || count($option->getDefault())))
@@ -83,7 +101,16 @@ class TextDescriptor extends Descriptor {
   }
 
   /**
-   * {@inheritdoc}
+   * Describe Definition instance.
+   *
+   * @since 1.0.0
+   * @access protected
+   * @abstract
+   *
+   * @param Definition $definition
+   * @param array $options
+   *
+   * @return string|mixed
    */
   protected function describeInputDefinition(Definition $definition, array $options = array()) {
     $total_width = $this->calculateTotalWidthForOptions($definition->getOptions());
@@ -121,7 +148,16 @@ class TextDescriptor extends Descriptor {
   }
 
   /**
-   * {@inheritdoc}
+   * Describe Command instance.
+   *
+   * @since 1.0.0
+   * @access protected
+   * @abstract
+   *
+   * @param Command $command
+   * @param array $options
+   *
+   * @return string|mixed
    */
   protected function describeCommand(Command $command, array $options = array()) {
     $command->getSynopsis(true);
@@ -151,7 +187,14 @@ class TextDescriptor extends Descriptor {
   }
 
   /**
-   * {@inheritdoc}
+   * Write text to output.
+   *
+   * @since 1.0.0
+   * @access private
+   *
+   * @param string $content Text content to write.
+   * @param array $options Optional. Options that have to be applied to $content.
+   * Default empty.
    */
   private function writeText($content, array $options = array()) {
     $this->write(

@@ -91,7 +91,12 @@ class OutputFormatter implements OutputFormatterInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set decorated flag.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param bool $decorated Whether to decorate messages or not.
    */
   public function setDecorated($decorated) {
     $this->decorated = (bool) $decorated;
@@ -106,21 +111,41 @@ class OutputFormatter implements OutputFormatterInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set new style.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Style name.
+   * @param OutputFormatterStyleInterface $style Style instance.
    */
   public function setStyle($name, StyleInterface $style) {
     $this->styles[strtolower($name)] = $style;
   }
 
   /**
-   * {@inheritdoc}
-   */
+  * Check if output formatter has style with specified name.
+  *
+  * @since 1.0.0
+  * @access public
+  *
+  * @param string $name
+  *
+  * @return bool
+  */
   public function hasStyle($name) {
     return isset($this->styles[strtolower($name)]);
   }
 
   /**
-   * {@inheritdoc}
+   * Retrieve style options from style with specified name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name
+   *
+   * @return OutputFormatterStyleInterface
    */
   public function getStyle($name) {
     if (!$this->hasStyle($name))
@@ -142,7 +167,14 @@ class OutputFormatter implements OutputFormatterInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Format message according to given styles.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $message Message to style.
+   *
+   * @return string Styled message.
    */
   public function format($message) {
     $message = preg_replace_callback('#.?<([a-z][a-z0-9-]*)>(.*?)</\1>#is', array($this, 'formatCallback'), (string) $message);

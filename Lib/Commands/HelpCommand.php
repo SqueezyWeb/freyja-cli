@@ -76,6 +76,9 @@ EOF
   /**
    * {@inheritdoc}
    *
+   * @param InputInterface $input Input object.
+   * @param OutputInterface $output Output object.
+   *
    * @throws Freyja\Exceptions\InvalidArgumentException if command does not exist.
    */
   protected function execute(InputInterface $input, OutputInterface $output) {

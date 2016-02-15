@@ -61,6 +61,9 @@ EOF
 
   /**
    * {@inheritdoc}
+   *
+   * @param InputInterface $input Input object.
+   * @param OutputInterface $output Output object.
    */
   protected function execute(InputInterface $input, OutputInterface $output) {
     $helper = new DescriptorHelper;

@@ -81,6 +81,9 @@ class StreamOutput extends Output {
 
   /**
    * {@inheritdoc}
+   *
+   * @param string $message Message to write.
+   * @param bool $newline Whether to print newline at the end of $message.
    */
   protected function doWrite($message, $newline) {
     if (false === @fwrite($this->stream, $message.($newline ? PHP_EOL : '')))
