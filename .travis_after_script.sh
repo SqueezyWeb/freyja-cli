@@ -32,7 +32,7 @@ if [ "$TRAVIS_BRANCH" == "develop" ] || [ "$TRAVIS_BRANCH" == "master" ]; then
     echo "--DEBUG : Git"
     git add -f .
     git commit -m "phpDocumentor (Travis Build: $TRAVIS_BUILD_NUMBER - Branch $TRAVIS_BRANCH)"
-    git push -fq origin gh-pages > /dev/null 2
+    git push -fq origin gh-pages > /dev/null 2>&1
 
     echo -e "Published phpDoc to gh-pages.\n"
   fi
