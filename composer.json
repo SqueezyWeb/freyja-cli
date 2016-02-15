@@ -23,7 +23,8 @@
     },
     "autoload": {
       "psr-4": {
-        "Freyja\\CLI\\": "Lib"
+        "Freyja\\CLI\\": "Lib",
+        "Freyja\\CLI\\Tests\\": "Tests"
       }
     }
 }

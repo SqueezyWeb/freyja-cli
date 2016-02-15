@@ -28,7 +28,7 @@ class NullOutput extends Output {
   /**
    * {@inheritdoc}
    */
-  public function setFormatter() {
+  public function setFormatter(OutputFormatterInterface $formatter) {
     // Do nothing.
   }
 
@@ -107,6 +107,13 @@ class NullOutput extends Output {
    * {@inheritdoc}
    */
   public function write($messages, $newline = false, $options = self::OUTPUT_NORMAL) {
+    // Do nothing.
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function doWrite($message, $newline) {
     // Do nothing.
   }
 }

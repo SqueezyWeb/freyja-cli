@@ -102,13 +102,14 @@ class TextDescriptor extends Descriptor {
     if ($definition->getArguments() && $definition->getOptions())
       $this->writeNewLine();
 
+    $later_options = array();
     if ($definition->getOptions()) {
-      $later_options = array();
-
       $this->writeText('<comment>Options:</comment>', $options);
       foreach ($definition->getOptions() as $option) {
-        $later_options[] = $option;
-        continue;
+        if (strlen($option->getShortcut()) > 1) {
+          $later_options[] = $option;
+          continue;
+        }
       }
       $this->writeNewLine();
       $this->describeInputOption($option, array_merge($options, array('total_width' => $total_width)));
@@ -125,10 +126,9 @@ class TextDescriptor extends Descriptor {
   protected function describeCommand(Command $command, array $options = array()) {
     $command->getSynopsis(true);
     $command->getSynopsis(false);
-    $command->mergeApplicationDefinition(false);
 
     $this->writeText('<comment>Usage:</comment>', $options);
-    foreach (array_merge(array($command->getSynopsis(true), $command->getAliases(), $command->getUsages())) as $usage) {
+    foreach (array_merge(array($command->getSynopsis(true)), $command->getAliases(), $command->getUsages()) as $usage) {
       $this->writeNewLine();
       $this->writeText('  '.$usage, $options);
     }
@@ -173,6 +173,12 @@ class TextDescriptor extends Descriptor {
   /**
    * Format input option/argument default value.
    *
+   * @internal Note that the behavior with PHP 5.3 this method may not behave
+   * as expected for multibyte unicode characters, as the constants
+   * `JSON_UNESCAPED_SLASHES` and `JSON_UNESCAPED_UNICODE` are available since
+   * PHP 5.4. We unescape slashes with `str_replace()` in PHP <5.4, but don't
+   * yet do anything about unicode characters.
+   *
    * @since 1.0.0
    * @access private
    *
@@ -181,6 +187,15 @@ class TextDescriptor extends Descriptor {
    * @return string
    */
   private function formatDefaultValue($default) {
+    $replacements = array(
+      '\\\\' => '\\',
+      '\/' => '/'
+    );
+    // Constants JSON_UNESCAPED_SLASHES and JSON_UNESCAPED_UNICODE are available
+    // since PHP 5.4.0.
+    // TODO: fully support JSON_UNESCAPED_UNICODE on PHP 5.3.
+    if (version_compare(PHP_VERSION, '5.4.0', '<'))
+      return str_replace(array_keys($replacements), array_values($replacements), json_encode($default));
     return str_replace('\\\\', '\\', json_encode($default, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
   }
 

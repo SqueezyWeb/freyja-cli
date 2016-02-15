@@ -11,7 +11,7 @@ namespace Freyja\CLI\Commands;
 use Freyja\CLI\Input\Argument;
 use Freyja\CLI\Input\Option;
 use Freyja\CLI\Input\InputInterface;
-use Freyja\CLI\Input\Definition as InputDefinition;
+use Freyja\CLI\Input\Definition;
 use Freyja\CLI\Output\OutputInterface;
 use Freyja\Exceptions\ExceptionInterface;
 use Freyja\Exceptions\InvalidArgumentException;
@@ -59,7 +59,7 @@ abstract class Command {
    *
    * @since 1.0.0
    * @access private
-   * @var InputDefinition
+   * @var Definition
    */
   private $definition;
 
@@ -71,6 +71,15 @@ abstract class Command {
    * @var string
    */
   private $help;
+
+  /**
+   * Helper Set associated with command.
+   *
+   * @since 1.0.0
+   * @access private
+   * @var HelperSet
+   */
+  private $helper_set;
 
   /**
    * Command description.
@@ -115,6 +124,7 @@ abstract class Command {
    * @access public
    */
   public function __construct() {
+    $this->definition = new Definition;
     $this->configure();
   }
 
@@ -128,6 +138,46 @@ abstract class Command {
    */
   public function ignoreValidationErrors() {
     $this->ignoreValidationErrors = true;
+  }
+
+  /**
+   * Retrieve helper set.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @return HelperSet HelperSet instance.
+   */
+  public function getHelperSet() {
+    return $this->helper_set;
+  }
+
+  /**
+   * Set helper set.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param HelperSet $helper_set HelperSet instance.
+   */
+  public function setHelperSet(HelperSet $helper_set) {
+    $this->helper_set = $helper_set;
+  }
+
+  /**
+   * Retrieve helper instance by name.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param string $name Helper name.
+   *
+   * @return mixed Helper value.
+   *
+   * @throws InvalidArgumentException if the helper is not defined.
+   */
+  public function getHelper($name) {
+    return $this->helper_set->get($name);
   }
 
   /**
@@ -172,7 +222,7 @@ abstract class Command {
   /**
    * Interact with the user.
    *
-   * This method is executed before the InputDefinition is validated.
+   * This method is executed before the Definition is validated.
    * This means that this is the only place where the command can interactively
    * ask for values of missing required arguments.
    *
@@ -230,11 +280,11 @@ abstract class Command {
 
     $this->initialize($input, $output);
 
-    if (null !== $this->processTitle) {
+    if (null !== $this->process_title) {
       if (function_exists('cli_set_process_title'))
-        cli_set_process_title($this->processTitle);
+        cli_set_process_title($this->process_title);
       elseif (function_exists('setproctitle'))
-        setproctitle($this->processTitle);
+        setproctitle($this->process_title);
       elseif (OutputInterface::VERBOSITY_VERY_VERBOSE === $output->getVerbosity())
         $output->writeln('<warning>Install the proctitle PECL to be able to change the process title.</warning>');
     }
@@ -263,12 +313,12 @@ abstract class Command {
    * @access public
    * @final
    *
-   * @param array|InputDefinition $definition Aray of argument and option
+   * @param array|Definition $definition Aray of argument and option
    * instances or a definition instance.
    * @return CommandInterface The current instance.
    */
   final public function setDefinition($definition) {
-    if ($definition instanceof InputDefinition)
+    if ($definition instanceof Definition)
       $this->definition = $definition;
     else
       $this->definition->setDefinition($definition);
@@ -277,13 +327,13 @@ abstract class Command {
   }
 
   /**
-   * Retrieve InputDefinition attached to this Command.
+   * Retrieve Definition attached to this Command.
    *
    * @since 1.0.0
    * @access public
    * @final
    *
-   * @return InputDefinition Input definition of this Command.
+   * @return Definition Input definition of this Command.
    */
   final public function getDefinition() {
     return $this->definition;

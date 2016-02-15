@@ -17,9 +17,9 @@ use Freyja\Exceptions\InvalidArgumentException;
  * @package Freyja\CLI\Formatters\Styles
  * @author Mattia Migliorini <mattia@squeezyweb.com>
  * @since 0.1.0
- * @version 1.0.0
+ * @version 1.0.1
  */
-class OutputFormatter implements StyleInterface {
+class Style implements StyleInterface {
   /**
    * Available foreground colors.
    *
@@ -48,7 +48,7 @@ class OutputFormatter implements StyleInterface {
    * @static
    * @var array
    */
-  private $available_background_colors = array(
+  private static $available_background_colors = array(
     'black' => array('set' => 40, 'unset' => 49),
     'red' => array('set' => 41, 'unset' => 49),
     'green' => array('set' => 42, 'unset' => 49),
@@ -174,7 +174,7 @@ class OutputFormatter implements StyleInterface {
         $this->invalidArgument('option', $option);
 
       if (!in_array(static::$available_options[$option], $this->options))
-        $this->options[] = static::$available_options[$option];
+        $this->options[$option] = static::$available_options[$option];
     } catch (InvalidArgumentException $e) {
       throw $e;
     }
@@ -195,8 +195,8 @@ class OutputFormatter implements StyleInterface {
       if (!isset(static::$available_options[$option]))
         $this->invalidArgument('option', $option);
 
-      if (false !== $pos = array_search(static::$available_options[$option], $this->options))
-        unset($this->options[$pos]);
+      if (isset($this->options[$option]))
+        unset($this->options[$option]);
     } catch (InvalidArgumentException $e) {
       throw $e;
     }
@@ -218,6 +218,90 @@ class OutputFormatter implements StyleInterface {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function setUnset($foreground, $background, array $options = array()) {
+    if (!is_null($foreground)) {
+      $this->foreground['unset'] = $foreground;
+    }
+
+    if (!is_null($background)) {
+      $this->background['unset'] = $background;
+    }
+
+    foreach ($options as $name => $option) {
+      if (isset($this->options[$name]))
+        $this->options[$name]['unset'] = $option['unset'];
+    }
+  }
+
+  /**
+   * Reset unset colors and options.
+   *
+   * @since 1.0.1
+   * @access public
+   */
+  public function resetUnset() {
+    if (!is_null($this->foreground)) {
+      if (isset($this->foreground['set']))
+        $this->foreground['unset'] = static::$available_foreground_colors['default']['unset'];
+      else
+        $this->foreground = null;
+    }
+    if (!is_null($this->background)) {
+      if (isset($this->background['set']))
+        $this->background['unset'] = static::$available_background_colors['default']['unset'];
+      else
+        $this->background = null;
+    }
+    foreach ($this->options as $name => &$option)
+      if (isset($option['set']))
+        $option['unset'] = static::$available_options[$name]['unset'];
+  }
+
+  /**
+   * Retrieve foreground color.
+   *
+   * Important: this only retrieves the foreground color of this style, i.e. the
+   * 'set' key in Style::$foreground.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return int Foreground 'set' color code.
+   */
+  public function getForeground() {
+    return isset($this->foreground['set']) ? $this->foreground['set'] : null;
+  }
+
+  /**
+   * Retrieve background color.
+   *
+   * Important: this only retrieves the background color for this style, i.e. the
+   * 'set' key in Style::$background.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return int Background 'set' color code.
+   */
+  public function getBackground() {
+    return isset($this->background['set']) ? $this->background['set'] : null;
+  }
+
+  /**
+   * Retrieve options.
+   *
+   * @since 1.0.1
+   * @access public
+   *
+   * @return array Active options.
+   */
+  public function getOptions() {
+    return isset($this->options['set']) ? $this->options['set'] : array();
+  }
+
+  /**
    * Apply style to given text.
    *
    * @since 1.0.0
@@ -232,17 +316,21 @@ class OutputFormatter implements StyleInterface {
     $unset = array();
 
     if (!is_null($this->foreground)) {
-      $set[] = $this->foreground['set'];
+      if (isset($this->foreground['set']))
+        $set[] = $this->foreground['set'];
       $unset[] = $this->foreground['unset'];
     }
     if (!is_null($this->background)) {
-      $set[] = $this->background['set'];
+      if (isset($this->background['set']))
+        $set[] = $this->background['set'];
       $unset[] = $this->background['unset'];
     }
     if (!is_null($this->options)) {
       foreach ($this->options as $option) {
-        $set[] = $option['set'];
-        $unset[] = $option['unset'];
+        if (isset($option['set']))
+          $set[] = $option['set'];
+        if (isset($option['unset']))
+          $unset[] = $option['unset'];
       }
     }
 
@@ -269,7 +357,7 @@ class OutputFormatter implements StyleInterface {
    * @throws Freyja\Exceptions\InvalidArgumentException if element is invalid.
    */
   private function setColor($element, $color) {
-    if (!in_array($color, array('foreground', 'background')))
+    if (!in_array($element, array('foreground', 'background')))
       throw new InvalidArgumentException('Invalid element for setColor(). Accepted values: "foreground", "background"');
 
     if (is_null($color)) {
@@ -280,7 +368,7 @@ class OutputFormatter implements StyleInterface {
     if (!isset(static::${'available_'.$element.'_colors'}[$color]))
       $this->invalidArgument($element.' color', $color);
 
-    $this->foreground = static::${'available_'.$element.'_colors'}[$color];
+    $this->$element = static::${'available_'.$element.'_colors'}[$color];
   }
 
   /**
