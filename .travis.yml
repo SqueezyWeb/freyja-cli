@@ -15,7 +15,7 @@ notifications:
 before_install:
   - sudo apt-get install -y graphviz
   - printf "\n" | pecl install intl
-  - printf "\n" | pecl install xsl
+  - phpenv config-add xsl.ini
 
 install:
   - composer install
