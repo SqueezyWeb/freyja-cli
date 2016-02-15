@@ -191,6 +191,9 @@ class TextDescriptor extends Descriptor {
       '\\\\' => '\\',
       '\/' => '/'
     );
+    // Constants JSON_UNESCAPED_SLASHES and JSON_UNESCAPED_UNICODE are available
+    // since PHP 5.4.0.
+    // TODO: fully support JSON_UNESCAPED_UNICODE on PHP 5.3.
     if (version_compare(PHP_VERSION, '5.4.0', '<'))
       return str_replace(array_keys($replacements), array_values($replacements), json_encode($default));
     return str_replace('\\\\', '\\', json_encode($default, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
