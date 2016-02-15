@@ -5,7 +5,7 @@ php:
   - '5.5'
   - '5.6'
   - '7.0'
-  - hhvm
+  # - hhvm
   - nightly
 
 notifications:
@@ -26,9 +26,7 @@ before_script:
   # PHPUnit
   - mkdir -p coverage
 
-script:
-  - ./vendor/bin/phpdoc -q
-
 after_script:
+  - ./vendor/bin/phpdoc -q
   # phpDocumentor
   - bash .travis_after_script.sh
