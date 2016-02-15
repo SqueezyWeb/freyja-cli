@@ -13,26 +13,26 @@ if [ "$TRAVIS_BRANCH" == "develop" ] || [ "$TRAVIS_BRANCH" == "master" ]; then
     cp -R coverage $HOME/coverage-latest
 
     cd $HOME
-    git config --global user.email "travis@travis-ci.org"
-    git config --global user.name "travis-ci"
+    git config --global user.email "mattia@squeezyweb.com"
+    git config --global user.name "Travis CI"
     git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/SqueezyWeb/freyja-cli.git gh-pages > /dev/null
 
     cd gh-pages
     echo "--DEBUG : Suppression"
-    git rm -rf ./docs/$TRAVIS_BRANCH
+    git rm -rf docs/$TRAVIS_BRANCH
 
     echo "--DEBUG : Dossier"
     mkdir -p docs/$TRAVIS_BRANCH
     mkdir -p coverage/$TRAVIS_BRANCH
 
     echo "--DEBUG : Copie"
-    cp -Rf $HOME/docs-latest/* ./docs/$TRAVIS_BRANCH/
-    cp -Rf $HOME/coverage-latest/* ./coverage/$TRAVIS_BRANCH/
+    cp -Rf $HOME/docs-latest/* docs/$TRAVIS_BRANCH/
+    cp -Rf $HOME/coverage-latest/* coverage/$TRAVIS_BRANCH/
 
     echo "--DEBUG : Git"
     git add -f .
     git commit -m "phpDocumentor (Travis Build: $TRAVIS_BUILD_NUMBER - Branch $TRAVIS_BRANCH)"
-    git push -fq origin gh-pages > /dev/null 2>&1
+    git push -fq https://${GH_TOKEN}@github.com/SqueezyWeb/freyja-cli ${TRAVIS_BRANCH}:gh-pages > /dev/null 2>&1
 
     echo -e "Published phpDoc to gh-pages.\n"
   fi
