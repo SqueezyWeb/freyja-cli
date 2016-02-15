@@ -47,7 +47,7 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface {
    * constants in OutputInterface). Default self::VERBOSITY_NORMAL.
    * @param bool|null $decorated Optional. Whether to decorate messages (null
    * for auto-guessing). Default null.
-   * @param Freyja\CLI\Formatters\OutputFormatterInterface|null Optional. Output
+   * @param OutputFormatterInterface|null Optional. Output
    * formatter instance (null to use default OutputFormatter). Default null.
    */
   public function __construct($verbosity = self::VERBOSITY_NORMAL, $decorated = null, OutputFormatterInterface $formatter = null) {
@@ -61,7 +61,12 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set the decorated flag.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param bool $decorated Whether to decorate messages.
    */
   public function setDecorated($decorated) {
     parent::setDecorated($decorated);
@@ -69,7 +74,12 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set output formatter.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param OutputFormatterInterface $formatter
    */
   public function setFormatter(OutputFormatterInterface $formatter) {
     parent::setFormatter($formatter);
@@ -77,7 +87,12 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set verbosity of the output.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param int $level Level of verbosity (one of the VERBOSITY constants).
    */
   public function setVerbosity($level) {
     parent::setVerbosity($level);
@@ -92,7 +107,12 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Set OutputInterface used for errors.
+   *
+   * @since 1.0.0
+   * @access public
+   *
+   * @param OutputInterface $error
    */
   public function setErrorOutput(OutputInterface $error) {
     $this->stderr = $error;
