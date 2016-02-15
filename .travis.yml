@@ -14,8 +14,8 @@ notifications:
 
 before_install:
   - sudo apt-get install -y graphviz
-  - printf "\n" | pecl install intl
-  - printf "\n" | pecl install xsl
+  - echo "\n" | pecl install intl
+  - echo "\n" | pecl install xsl
 
 install:
   - composer install
